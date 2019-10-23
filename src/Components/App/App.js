@@ -11,7 +11,10 @@ class App extends Component {
 
   render() {
     return (
-      <h1>Hello!</h1>
+      <div>
+        <h1>Hello!</h1>
+        <img src='https://image.tmdb.org/t/p/w500/udDclJoHjfjb8Ekgsd4FDteOkCU.jpg' />
+      </div>  
     )
   }
 }

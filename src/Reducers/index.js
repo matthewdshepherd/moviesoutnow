@@ -1,5 +1,7 @@
 import { combineReducers } from 'redux';
-import { isLoading, hasErrored, movies } from './recentMoviesReducer'
+import { isLoading } from './isLoading';
+import { hasErrored } from './hasErrored';
+import { movies } from './movies';
 
 
 export const rootReducer = combineReducers({
