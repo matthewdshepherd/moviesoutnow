@@ -1,24 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchRecentMovies } from '../../Thunks/fetchRecentMovies';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchRecentMovies('https://api.themoviedb.org/3/movie/now_playing?api_key=02dd2ef67fc6cb12ff710ae75f51dda5&language=en-US&page=1')
+  }
+
+  render() {
+    return (
+      <h1>Hello!</h1>
+    )
+  }
 }
 
-export default App;
+
+  const mapStateToProps = (state) => ({
+    movies: state.movies,
+    isLoading: state.isLoading,
+    error: state.error
+  })
+
+  const mapDispatchToProps = (dispatch) => ({
+    fetchRecentMovies: (url) => dispatch(fetchRecentMovies(url))
+  })
+
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

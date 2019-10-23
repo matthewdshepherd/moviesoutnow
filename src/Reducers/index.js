@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
+import { isLoading, hasErrored, movies } from './recentMoviesReducer'
 
 
-
-const rootReducer = combineReducers({
-  
+export const rootReducer = combineReducers({
+  isLoading,
+  error: hasErrored,
+  movies
 })
 
 
 
-
-export default rootReducer;
