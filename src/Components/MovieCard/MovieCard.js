@@ -1,8 +1,12 @@
 import React from 'react';
 
-const MovieCard = ({  }) => {
+const MovieCard = ({ title, posterPath, genre  }) => {
   return (
-    <h1>MovieCard</h1>
+    <div>
+      <h1>{title}</h1>
+      <h2>{genre.name}</h2>
+      <img src={`https://image.tmdb.org/t/p/w500${posterPath}`} alt={`${title} art`} />
+    </div>
   )
 }
 
