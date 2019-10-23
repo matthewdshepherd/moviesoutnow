@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import movie_time_logo from '../../images/movie_time.png'
-import LoginForm from '../../LoginForm/LoginForm'
+import LoginForm from '../LoginForm/LoginForm'
 
 function App() {
   return (

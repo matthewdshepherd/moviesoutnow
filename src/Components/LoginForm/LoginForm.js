@@ -1,6 +1,6 @@
 import React from "react"
 import "./LoginForm.css"
-import movie_time_logo from '../images/movie_time.png'
+import movie_time_logo from '../../images/movie_time.png'
 
 
 export class LoginForm extends React.Component {
@@ -17,23 +17,25 @@ export class LoginForm extends React.Component {
       <form className="header--login">
         <div className="header--userinput__div">
           <label
+            className="login__label"
             htmlFor="email">Email</label>
           <input
             className="header--userinput__input"
             id="email"
             type="text"
             placeholder="Email"></input>
-          <p>Create new account</p>
+          <p className="login--bottomtext" >Create new account</p>
         </div>
         <div className="header--userinput__div">
           <label
+            className="login__label"
             htmlFor="password">Passowrd</label>
           <input
             className="header--userinput__input"
             id="password"
-            type="text"
+            type="password"
             placeholder="Password"></input>
-          <p>Forgot account?</p>
+          <p className="login--bottomtext" >Forgot account?</p>
         </div>
         <button
           type="button"
