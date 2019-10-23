@@ -10,7 +10,7 @@ import App from './Components/App/App';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
-console.log(store)
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
