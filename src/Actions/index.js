@@ -12,3 +12,8 @@ export const setRecentMovies = (movies) => ({
   type: 'SET_RECENT_MOVIES',
   movies
 })
+
+export const setGenres = (genres) => ({
+  type: 'SET_GENRES',
+  genres
+})
