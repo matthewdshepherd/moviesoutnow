@@ -5,7 +5,7 @@ export const isLoading = (bool) => ({
 
 export const hasErrored = (msg) => ({
   type: 'HAS_ERRORED',
-  error: msg
+  msg
 })
 
 export const setRecentMovies = (movies) => ({
