@@ -1,25 +1,9 @@
 .header {
   display: flex;
   justify-content: space-between;
+  padding: 20px;
 }
 
 .movie_time_logo {
   height: 150px;
-}
-
-.header--login {
-  display: flex;
-  flex-direction: space-between;
-}
-
-.header--userinput__div {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
-  align-items: flex-start;
-}
-
-.login__button {
-  height: 20%;
 }
