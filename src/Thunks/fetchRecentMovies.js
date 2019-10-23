@@ -1,7 +1,5 @@
 import { isLoading, hasErrored, setRecentMovies } from '../Actions';
 
-
-
 export const fetchRecentMovies = (url) => {
   return async (dispatch) => {
     try {
@@ -12,7 +10,7 @@ export const fetchRecentMovies = (url) => {
       }
       const movies = await response.json();
       dispatch(isLoading(false));
-      dispatch(setRecentMovies(movies));
+      dispatch(setRecentMovies(movies.results));
     } catch (error) {
       dispatch(hasErrored(error.message))
     }
