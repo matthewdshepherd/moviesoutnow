@@ -11,10 +11,6 @@
   align-items: flex-start;
 }
 
-.login__button {
-  height: 20%;
-}
-
 .login__label {
   color: #FFF;
 }
@@ -47,4 +43,10 @@
   color: #FFF;
   font-weight: 700;
   font-size: 15px;
+  cursor: pointer;
+}
+
+.login__button:disabled {
+  background-color: #f8acfc;
+  cursor: default;
 }

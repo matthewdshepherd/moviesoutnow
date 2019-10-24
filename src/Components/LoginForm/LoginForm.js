@@ -8,11 +8,21 @@ export class LoginForm extends React.Component {
     super()
     this.state = {
       email: "",
-      passowrd: ""
+      password: ""
     }
   }
 
+  handleChnage = event => {
+    this.setState( {[event.target.name]: event.target.value})
+  };
+
+  canBeSubmitted() {
+   const { email, password } = this.state;
+   return email.length > 0 && password.length > 0;
+ }
+
   render() {
+    const isEnabled = this.canBeSubmitted();
     return(
       <form className="header--login">
         <div className="header--userinput__div">
@@ -23,7 +33,10 @@ export class LoginForm extends React.Component {
             className="header--userinput__input"
             id="email"
             type="text"
-            placeholder="Email"></input>
+            name="email"
+            placeholder="Email"
+            onChange={this.handleChnage}
+            value={this.state.email} />
           <p className="login--bottomtext" >Create new account</p>
         </div>
         <div className="header--userinput__div">
@@ -34,12 +47,16 @@ export class LoginForm extends React.Component {
             className="header--userinput__input"
             id="password"
             type="password"
-            placeholder="Password"></input>
+            name="password"
+            placeholder="Password"
+            onChange={this.handleChnage}
+            value={this.state.password} />
           <p className="login--bottomtext" >Forgot account?</p>
         </div>
         <button
           type="button"
-          className="login__button">Login</button>
+          className="login__button"
+          disabled={!isEnabled}>Login</button>
       </form>
     )
   }
