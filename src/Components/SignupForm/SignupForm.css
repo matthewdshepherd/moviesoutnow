@@ -1,0 +1,20 @@
+.SignupForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.signup-login {
+  display: flex;
+  justify-content: space-between;
+}
+
+.first--last--name__div{
+  display: flex;
+}
+
+.name__div--input,
+.email--password--SU__div {
+  display: flex;
+  flex-direction: column;
+}
