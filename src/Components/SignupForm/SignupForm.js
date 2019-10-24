@@ -1,5 +1,5 @@
 import React from "react"
-import "./LoginForm.css"
+import "./SignupForm.css"
 
 export class SignupForm extends React.Component {
   constructor() {
@@ -31,7 +31,7 @@ render() {
           id="signup--name--input"
           placeholder="First Name"
           name="firstName"
-          value={}
+          value={this.state.firstName}
           />
         </div>
         <div className="name__div--input">
@@ -45,7 +45,7 @@ render() {
           id="signup--name--input"
           placeholder="Last Name"
           name="lastName"
-          value={}
+          value={this.state.lastName}
           />
         </div>
       </div>
@@ -60,7 +60,8 @@ render() {
           id="email--SU"
           placeholder="Email"
           name="email"
-          value={}
+          value={this.state.email}
+          />
         </div>
         <div className="email--password--SU__div">
           <label
@@ -72,12 +73,13 @@ render() {
           id="password--SU"
           placeholder="Password"
           name="password"
-          value={}
+          value={this.state.password}
+          />
         </div>
       </div>
       <button
       type="button"
-      className="signup--submit__button"
+      className="signup--submit__button">Sign Up</button>
     </form>
 
   )

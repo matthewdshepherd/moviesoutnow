@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import './App.css';
 import movie_time_logo from '../../images/movie_time.png'
 import LoginForm from '../LoginForm/LoginForm'
+import SignupForm from '../SignupForm/SignupForm'
 
 
 class App extends Component {
@@ -26,6 +27,7 @@ class App extends Component {
           className="movie_time_logo"
         />
         <LoginForm />
+        <SignupForm />
       </header>
     </div>
     )
