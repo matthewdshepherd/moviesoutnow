@@ -12,6 +12,10 @@ export class SignupForm extends React.Component {
     }
   }
 
+  handleChnage = event => {
+    this.setState({ [event.target.name]: event.target.value })
+  };
+
 render() {
   return(
     <form className="SignupForm">
@@ -31,6 +35,7 @@ render() {
           id="signup--name--input"
           placeholder="First Name"
           name="firstName"
+          onChange={this.handleChnage}
           value={this.state.firstName}
           />
         </div>
@@ -45,6 +50,7 @@ render() {
           id="signup--name--input"
           placeholder="Last Name"
           name="lastName"
+          onChange={this.handleChnage}
           value={this.state.lastName}
           />
         </div>
@@ -60,6 +66,7 @@ render() {
           id="email--SU"
           placeholder="Email"
           name="email"
+          onChange={this.handleChnage}
           value={this.state.email}
           />
         </div>
@@ -68,11 +75,12 @@ render() {
           className="email--password--SU__label"
           htmlFor="password">Passowrd</label>
           <input
-          type="text"
+          type="password"
           className="email--password--SU__input"
           id="password--SU"
           placeholder="Password"
           name="password"
+          onChange={this.handleChnage}
           value={this.state.password}
           />
         </div>
