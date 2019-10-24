@@ -9,8 +9,8 @@ import './App.css';
 class App extends Component {
 
   componentDidMount() {
-    this.props.fetchRecentMovies('https://api.themoviedb.org/3/movie/now_playing?api_key=02dd2ef67fc6cb12ff710ae75f51dda5&language=en-US&page=1')
     this.props.fetchGenres()
+    this.props.fetchRecentMovies('https://api.themoviedb.org/3/movie/now_playing?api_key=02dd2ef67fc6cb12ff710ae75f51dda5&language=en-US&page=1')
   }
 
   render() {
