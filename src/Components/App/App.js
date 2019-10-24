@@ -31,10 +31,20 @@ class App extends Component {
         </header>
         <ReactModal
           isOpen={true} //need to assign to a variagle in global state
-          style={{ overlay: {}, content: {} }}
-          contentLabel="Welcome Form"
-          className="WelcomeFormModal"
-          overlayClassName="WelcomeFormOverlay"
+          style={{
+            overlay: {
+              position: "fixed",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: "rgba(255, 255, 255, 0.75)",
+            },
+            content: {}
+          }}
+          contentLabel="Signup Form"
+          className="SignupFormModal"
+          overlayClassName="SignupFormOverlay"
         >
           <SignupForm />
         </ReactModal>
