@@ -3,7 +3,7 @@ import './MovieCard.css'
 
 const MovieCard = ({ key, title, posterPath, genre }) => {
   return (
-    <div key={key} className="movieCard">
+    <div className="movieCard">
       <img className="moviePoster" src={`https://image.tmdb.org/t/p/w500${posterPath}`} alt={`${title} art`} />
       <div className="moviePosterOverlay">
         <h1 className="movieCardTitle">{title}</h1>
