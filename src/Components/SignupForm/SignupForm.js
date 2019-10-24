@@ -16,8 +16,8 @@ render() {
   return(
     <form className="SignupForm">
       <div className="signup-login">
-        <p className="signup-text"></p>
-        <button type="button" className="signup--login--button">Login</button>
+        <h3 className="signup-text">SIGN UP</h3>
+        <button type="button" className="signup--login--button">Current User Login</button>
       </div>
       <div className="first--last--name__div">
         <div className="name__div--input">

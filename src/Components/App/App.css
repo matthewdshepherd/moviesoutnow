@@ -9,14 +9,12 @@
   height: 150px;
 }
 
+.SignupFormModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.SignupFormOverlay {
-  /* align-items: center; */
-  background-color: rgba(128, 128, 128, 0.5);
-  /* color: #ffe81f; */
-  /* display: flex; */
-  /* font-size: 2em; */
-  /* justify-content: space-around; */
-  /* margin: 0; */
-  width: 100vw;
+.cinema_night_artwork {
+  height: 500px;
 }

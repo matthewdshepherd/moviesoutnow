@@ -2,19 +2,55 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  width: 400px;
+  color: #FFF;
 }
 
 .signup-login {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 .first--last--name__div{
   display: flex;
+  justify-content: space-between;
 }
 
 .name__div--input,
 .email--password--SU__div {
   display: flex;
   flex-direction: column;
+}
+
+.name__div--input {
+  width: 45%;
+}
+
+.signup-text {
+  margin: 0;
+}
+
+.signup--login--button {
+  border: none;
+  background: none;
+  color: #FFF;
+}
+
+.signup--submit__button,
+.email--password--SU__input,
+.signup--name--input {
+  border: none;
+  height: 45px;
+  border-radius: 5px;
+  padding-left: 10px;;
+  font-size: 20px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+}
+
+.signup--submit__button {
+  padding-left: 0;
+  margin-bottom: 0;
+  width: 45%;
 }
