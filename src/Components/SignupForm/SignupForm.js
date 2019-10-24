@@ -79,7 +79,7 @@ render() {
       </div>
       <button
       type="button"
-      className="signup--submit__button">Sign Up</button>
+      className="signup--submit__button">SIGN UP</button>
     </form>
 
   )

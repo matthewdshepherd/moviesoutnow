@@ -29,12 +29,15 @@
 
 .signup-text {
   margin: 0;
+  color: #74FBFF;
+
 }
 
 .signup--login--button {
   border: none;
   background: none;
   color: #FFF;
+  
 }
 
 .signup--submit__button,
@@ -53,4 +56,6 @@
   padding-left: 0;
   margin-bottom: 0;
   width: 45%;
+  background-color: #74FBFF;
+  font-weight: 500;;
 }
