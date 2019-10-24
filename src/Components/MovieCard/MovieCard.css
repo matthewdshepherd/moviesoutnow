@@ -3,12 +3,13 @@
   flex-direction: column;
   justify-content: flex-end;
   width: 300px;
-  height: auto;
   margin: 20px 10px;
 }
 
 .moviePoster {
   position: relative;
+  width: 100%;
+  height: auto;
 }
 
 .moviePosterOverlay {
