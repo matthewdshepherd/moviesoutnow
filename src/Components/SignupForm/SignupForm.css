@@ -37,7 +37,7 @@
   border: none;
   background: none;
   color: #FFF;
-  
+  cursor: pointer;
 }
 
 .signup--submit__button,
@@ -57,5 +57,10 @@
   margin-bottom: 0;
   width: 45%;
   background-color: #74FBFF;
-  font-weight: 500;;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.signup--submit__button:disabled {
+  cursor: default;
 }
