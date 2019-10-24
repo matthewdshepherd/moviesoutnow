@@ -8,6 +8,7 @@ import './App.css';
 import movie_time_logo from '../../images/movie_time.png'
 import LoginForm from '../LoginForm/LoginForm'
 import SignupForm from '../SignupForm/SignupForm'
+import ReactModal from "react-modal";
 
 
 class App extends Component {
@@ -27,8 +28,16 @@ class App extends Component {
           className="movie_time_logo"
         />
         <LoginForm />
-        <SignupForm />
-      </header>
+        </header>
+        <ReactModal
+          isOpen={true} //need to assign to a variagle in global state
+          style={{ overlay: {}, content: {} }}
+          contentLabel="Welcome Form"
+          className="WelcomeFormModal"
+          overlayClassName="WelcomeFormOverlay"
+        >
+          <SignupForm />
+        </ReactModal>
       <Movies />
     </div>
     )
