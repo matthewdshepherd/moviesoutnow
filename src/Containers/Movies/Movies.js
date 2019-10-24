@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import MovieCard from '../../Components/MovieCard/MovieCard';
+import './Movies.css'
 
 const mapStateToProps = ({ movies, genres, isLoading }) => ({
   movies,
@@ -21,9 +22,7 @@ const Movies = ({ movies, genres, isLoading }) => {
   })
   return (
     <section className='section--movies-container'>
-      <ul>
         {!isLoading && movieCards}
-      </ul>
     </section>
   )
 }
