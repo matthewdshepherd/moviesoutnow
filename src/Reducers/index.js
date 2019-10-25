@@ -3,12 +3,14 @@ import { isLoading } from './isLoading';
 import { hasErrored } from './hasErrored';
 import { movies } from './movies';
 import { genres } from './genres';
+import { loginUser } from './loginUser'
 
 export const rootReducer = combineReducers({
   isLoading,
   error: hasErrored,
   movies,
-  genres
+  genres,
+  loginUser
 })
 
 

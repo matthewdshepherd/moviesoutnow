@@ -1,7 +1,8 @@
 import React from "react"
 import "./LoginForm.css"
 import movie_time_logo from '../../images/movie_time.png'
-
+import { userLogin } from '../../Actions/index'
+import { connect } from 'react-redux'
 
 export class LoginForm extends React.Component {
   constructor() {
@@ -10,6 +11,15 @@ export class LoginForm extends React.Component {
       email: "",
       password: ""
     }
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.userLogin(this.state)
+    this.setState({
+      email: "",
+      password: ""
+    })
   }
 
   handleChnage = event => {
@@ -62,4 +72,8 @@ export class LoginForm extends React.Component {
   }
 }
 
-export default LoginForm
+const mapDispatchToProps = dispatch => ({
+  userLogin: loginCredentials => dispatch(userLogin(loginCredentials) )
+})
+
+export default connect(null, mapDispatchToProps)(LoginForm);
