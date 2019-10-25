@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchRecentMovies } from '../../Thunks/fetchRecentMovies';
 import { fetchGenres } from '../../Thunks/fetchGenres';
-// import { toggleModal } from '../../Actions'
 import { bindActionCreators } from 'redux';
 import Movies from '../../Containers/Movies/Movies';
 import './App.css';
@@ -21,7 +20,6 @@ class App extends Component {
   }
 
   render() {
-    {console.log(this.props.toggleModal)}
     return (
       <div className="App">
       <header className="header">
@@ -33,6 +31,7 @@ class App extends Component {
         <LoginForm />
         </header>
         <ReactModal
+          ariaHideApp={false}
           isOpen={this.props.toggleModal}
           style={{
             overlay: {

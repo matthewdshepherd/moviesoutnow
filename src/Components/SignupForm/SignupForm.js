@@ -3,6 +3,8 @@ import "./SignupForm.css"
 import { postNewUser } from '../../Thunks/postNewUser'
 import { connect } from 'react-redux'
 import { toggleModal } from '../../Actions'
+import { bindActionCreators } from 'redux';
+
 
 export class SignupForm extends React.Component {
   constructor() {
@@ -17,7 +19,7 @@ export class SignupForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    postNewUser(this.state)
+    this.props.postNewUser(this.state)
     this.setState({
       firstName: "",
       lastName: "",
@@ -53,7 +55,7 @@ export class SignupForm extends React.Component {
             <input
             type="text"
             className="signup--name--input"
-            id="signup--name--input"
+            id="signup--name--input fname"
             placeholder="First Name"
             name="firstName"
             onChange={this.handleChnage}
@@ -68,7 +70,7 @@ export class SignupForm extends React.Component {
             <input
             type="text"
             className="signup--name--input"
-            id="signup--name--input"
+            id="signup--name--input lname"
             placeholder="Last Name"
             name="lastName"
             onChange={this.handleChnage}
@@ -119,8 +121,13 @@ export class SignupForm extends React.Component {
 
 const mapStateToProps = ({ toggleModal }) => ({ toggleModal })
 
-const mapDispatchToProp = dispatch => ({
-  toggleModal: bool => dispatch(toggleModal(bool)) 
-})
+const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({ toggleModal, postNewUser}, dispatch)
+)
 
-export default connect(mapStateToProps, mapDispatchToProp)(SignupForm)
+// const mapDispatchToProp = dispatch => ({
+//   toggleModal: bool => dispatch(toggleModal(bool)),
+//   postNewUser: () => dispatch(postNewUser)
+// })
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm)

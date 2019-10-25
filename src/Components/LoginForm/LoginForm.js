@@ -55,7 +55,7 @@ export class LoginForm extends React.Component {
         <div className="header--userinput__div">
           <label
             className="login__label"
-            htmlFor="password">Passowrd</label>
+            htmlFor="password">Password</label>
           <input
             className="header--userinput__input"
             id="password"
