@@ -4,6 +4,8 @@ import movie_time_logo from '../../images/movie_time.png'
 import { connect } from 'react-redux'
 import { postUserLogin } from '../../Thunks/postUserLogin'
 import { toggleModal } from '../../Actions'
+import { bindActionCreators } from 'redux';
+
 
 export class LoginForm extends React.Component {
   constructor() {
@@ -16,7 +18,7 @@ export class LoginForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    postUserLogin(this.state)
+    this.props.postUserLogin(this.state)
     this.setState({
       email: "",
       password: ""
@@ -80,9 +82,9 @@ const mapStateToProps = ({ toggleModal }) => ({
   toggleModal
 })
 
-const mapDispatchToProps = dispatch => ({
-  toggleModal: bool => dispatch(toggleModal(bool))
-})
+const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({ toggleModal, postUserLogin}, dispatch)
+)
 
 
 // export default connect(null, mapDispatchToProps)(LoginForm);
