@@ -2,6 +2,7 @@ import React from "react"
 import "./SignupForm.css"
 import { postNewUser } from '../../Thunks/postNewUser'
 import { connect } from 'react-redux'
+import { toggleModal } from '../../Actions'
 
 export class SignupForm extends React.Component {
   constructor() {
@@ -23,7 +24,7 @@ export class SignupForm extends React.Component {
       email: "",
       password: ""
     })
-
+    this.props.toggleModal()
   }
 
   handleChnage = event => {
@@ -118,8 +119,8 @@ export class SignupForm extends React.Component {
 
 const mapStateToProps = ({ toggleModal }) => ({ toggleModal })
 
-// const mapDispatchToProp = (dispath) => ({
-//   toggleModal: 
-// })
+const mapDispatchToProp = dispatch => ({
+  toggleModal: bool => dispatch(toggleModal(bool)) 
+})
 
-export default connect(mapStateToProps, null)(SignupForm)
+export default connect(mapStateToProps, mapDispatchToProp)(SignupForm)

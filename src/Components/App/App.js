@@ -21,6 +21,7 @@ class App extends Component {
   }
 
   render() {
+    {console.log(this.props.toggleModal)}
     return (
       <div className="App">
       <header className="header">

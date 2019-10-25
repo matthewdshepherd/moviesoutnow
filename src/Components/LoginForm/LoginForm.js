@@ -82,7 +82,6 @@ const mapStateToProps = ({ toggleModal }) => ({
 
 const mapDispatchToProps = dispatch => ({
   toggleModal: bool => dispatch(toggleModal(bool))
-  // userLogin: loginCredentials => dispatch(userLogin(loginCredentials) )
 })
 
 
