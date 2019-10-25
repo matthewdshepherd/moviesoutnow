@@ -22,3 +22,8 @@ export const loginUser = loginCredentials => ({
   type: 'LOGIN_USER',
   loginCredentials
 })
+
+export const newUser = loginCredentials => ({
+  type: 'NEW_USER',
+  loginCredentials
+})
