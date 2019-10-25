@@ -17,7 +17,7 @@ const Movies = ({ movies, genres, isLoading }) => {
         key={movie.id}
         title={movie.title}
         posterPath={movie.poster_path}
-        genre={genre[0].name}
+        genre={genre[0]}
     />)
   })
   return (
