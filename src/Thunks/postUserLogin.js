@@ -1,14 +1,15 @@
 import { isLoading, hasErrored, currentUser } from '../Actions'
 
 export const postUserLogin = (loginCredentials) => {
-  const options = {
-    method: 'POST',
-    body: JSON.stringify(loginCredentials),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  };
   return async (dispatch) => {
+    console.log(loginCredentials)
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(loginCredentials),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
     try {
       dispatch(isLoading(true))
       const response = await fetch(`http://localhost:3001/api/v1/login/`, options)
@@ -17,7 +18,8 @@ export const postUserLogin = (loginCredentials) => {
       }
       const currentUserResponse = await response.json()
       dispatch(isLoading(false));
-      dispatch(currentUser(currentUserResponse.results));
+      console.log(currentUserResponse)
+      dispatch(currentUser(currentUserResponse));
     } catch (error) {
       dispatch(hasErrored(error.message))
     }
