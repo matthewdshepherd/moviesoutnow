@@ -48,7 +48,7 @@ export class LoginForm extends React.Component {
             placeholder="Email"
             onChange={this.handleChnage}
             value={this.state.email} />
-          <p className="login--bottomtext"
+          <p className="login--bottomtext new--account__btn"
             onClick={ this.props.toggleModal }
           >Create new account</p>
         </div>

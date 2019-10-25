@@ -60,3 +60,7 @@
 .signup--submit__button:disabled {
   cursor: default;
 }
+
+.new--account__btn {
+  cursor: pointer;
+}
