@@ -3,6 +3,7 @@ import "./LoginForm.css"
 import movie_time_logo from '../../images/movie_time.png'
 import { userLogin } from '../../Actions/index'
 import { connect } from 'react-redux'
+import { postNewUser } from '../../Thunks/postUserLogin'
 
 export class LoginForm extends React.Component {
   constructor() {
@@ -15,7 +16,7 @@ export class LoginForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.userLogin(this.state)
+    postNewUser(this.state)
     this.setState({
       email: "",
       password: ""

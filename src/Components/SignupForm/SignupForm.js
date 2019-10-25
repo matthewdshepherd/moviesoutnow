@@ -1,5 +1,6 @@
 import React from "react"
 import "./SignupForm.css"
+import { postNewUser } from '../../Thunks/postNewUser'
 
 export class SignupForm extends React.Component {
   constructor() {
@@ -10,6 +11,15 @@ export class SignupForm extends React.Component {
       email: "",
       password: ""
     }
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    postNewUser(this.state)
+    this.setState({
+      email: "",
+      password: ""
+    })
   }
 
   handleChnage = event => {
