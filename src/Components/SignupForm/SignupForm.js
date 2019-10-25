@@ -4,6 +4,7 @@ import { postNewUser } from '../../Thunks/postNewUser'
 import { connect } from 'react-redux'
 import { toggleModal } from '../../Actions'
 import { bindActionCreators } from 'redux';
+import close_button from '../../images/close_btn.png'
 
 
 export class SignupForm extends React.Component {
@@ -44,7 +45,12 @@ export class SignupForm extends React.Component {
       <form className="SignupForm">
         <div className="signup-login">
           <h3 className="signup-text">SIGN UP</h3>
-          <button type="button" className="signup--login--button">Current User Login</button>
+          <img
+            src={close_button }
+            alt="Close Button"
+            className="signup_close_button"
+            onClick={() => this.props.toggleModal()}
+          />
         </div>
         <div className="first--last--name__div">
           <div className="name__div--input">
