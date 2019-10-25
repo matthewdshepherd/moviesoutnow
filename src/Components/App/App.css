@@ -9,3 +9,13 @@
 .movie_time_logo {
   height: 150px;
 }
+
+.SignupFormModal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cinema_night_artwork {
+  height: 500px;
+}
