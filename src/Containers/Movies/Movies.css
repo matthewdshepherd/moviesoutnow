@@ -1,5 +1,7 @@
 .section--movies-container {
   display: flex;
   flex-wrap: wrap;
+  height: 73vh;
   justify-content: space-evenly;
+  overflow-y: scroll;
 }
