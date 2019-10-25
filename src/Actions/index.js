@@ -18,14 +18,9 @@ export const setGenres = (genres) => ({
   genres
 })
 
-export const loginUser = loginCredentials => ({
-  type: 'LOGIN_USER',
-  loginCredentials
-})
-
-export const newUser = loginCredentials => ({
-  type: 'NEW_USER',
-  loginCredentials
+export const currentUser = currentUser => ({
+  type: 'CURRENT_USER',
+  currentUser
 })
 
 export const toggleModal = toggleState => ({

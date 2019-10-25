@@ -1,4 +1,4 @@
-import { isLoading, hasErrored, newUser } from '../Actions'
+import { isLoading, hasErrored, currentUser } from '../Actions'
 
 export const postNewUser = (loginCredentials) => {
   return async (dispatch) => {
@@ -25,7 +25,7 @@ export const postNewUser = (loginCredentials) => {
       const newUserResponse = await response.json()
       console.log(newUserResponse)
       dispatch(isLoading(false));
-      dispatch(newUser(newUserResponse.results));
+      dispatch(currentUser(newUserResponse.results));
     } catch (error) {
       console.log('here')
       dispatch(hasErrored(error.message))

@@ -1,4 +1,4 @@
-import { isLoading, hasErrored, loginUser } from '../Actions'
+import { isLoading, hasErrored, currentUser } from '../Actions'
 
 export const postUserLogin = (loginCredentials) => {
   const options = {
@@ -15,9 +15,9 @@ export const postUserLogin = (loginCredentials) => {
       if (!response.ok) {
         throw Error(response.statusText)
       }
-      const currentUser = await response.json()
+      const currentUserResponse = await response.json()
       dispatch(isLoading(false));
-      dispatch(loginUser(currentUser.results));
+      dispatch(currentUser(currentUserResponse.results));
     } catch (error) {
       dispatch(hasErrored(error.message))
     }

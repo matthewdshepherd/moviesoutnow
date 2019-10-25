@@ -3,8 +3,7 @@ import { isLoading } from './isLoading';
 import { hasErrored } from './hasErrored';
 import { movies } from './movies';
 import { genres } from './genres';
-import { loginUser } from './loginUser'
-import { newUser } from './newUser'
+import { currentUser } from './currentUser'
 import { toggleModal } from './toggleModal'
 
 export const rootReducer = combineReducers({
@@ -12,8 +11,7 @@ export const rootReducer = combineReducers({
   error: hasErrored,
   movies,
   genres,
-  loginUser,
-  newUser,
+  currentUser,
   toggleModal
 })
 
