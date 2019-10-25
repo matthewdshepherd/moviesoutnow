@@ -17,3 +17,8 @@ export const setGenres = (genres) => ({
   type: 'SET_GENRES',
   genres
 })
+
+export const loginUser = loginCredentials => ({
+  type: 'LOGIN_USER',
+  loginCredentials
+})
