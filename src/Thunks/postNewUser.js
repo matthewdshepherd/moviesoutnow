@@ -15,9 +15,9 @@ export const postNewUser = (loginCredentials) => {
       if (!response.ok) {
         throw Error(response.statusText)
       }
-      const newUser = await response.json()
+      const newUserResponse = await response.json()
       dispatch(isLoading(false));
-      dispatch(newUser(newUser.results));
+      dispatch(newUser(newUserResponse.results));
     } catch (error) {
       dispatch(hasErrored(error.message))
     }

@@ -27,3 +27,8 @@ export const newUser = loginCredentials => ({
   type: 'NEW_USER',
   loginCredentials
 })
+
+export const toggleModal = bool => ({
+  type: 'TOGGLE_MODAL',
+  toggleState: bool
+})

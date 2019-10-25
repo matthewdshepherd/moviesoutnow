@@ -1,6 +1,7 @@
 import React from "react"
 import "./SignupForm.css"
 import { postNewUser } from '../../Thunks/postNewUser'
+import { connect } from 'react-redux'
 
 export class SignupForm extends React.Component {
   constructor() {
@@ -17,9 +18,12 @@ export class SignupForm extends React.Component {
     event.preventDefault();
     postNewUser(this.state)
     this.setState({
+      firstName: "",
+      lastName: "",
       email: "",
       password: ""
     })
+
   }
 
   handleChnage = event => {
@@ -104,11 +108,18 @@ export class SignupForm extends React.Component {
         <button
           type="button"
           disabled={!isEnabled}
-          className="signup--submit__button">SIGN UP</button>
+          className="signup--submit__button"
+          onClick={(event) => this.handleSubmit(event)}>SIGN UP</button>
       </form>
     )
   }
 
 }
 
-export default SignupForm
+const mapStateToProps = ({ toggleModal }) => ({ toggleModal })
+
+// const mapDispatchToProp = (dispath) => ({
+//   toggleModal: 
+// })
+
+export default connect(mapStateToProps, null)(SignupForm)

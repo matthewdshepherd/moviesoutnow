@@ -1,9 +1,9 @@
 import React from "react"
 import "./LoginForm.css"
 import movie_time_logo from '../../images/movie_time.png'
-import { userLogin } from '../../Actions/index'
 import { connect } from 'react-redux'
-import { postNewUser } from '../../Thunks/postUserLogin'
+import { postUserLogin } from '../../Thunks/postUserLogin'
+import { toggleModal } from '../../Actions'
 
 export class LoginForm extends React.Component {
   constructor() {
@@ -16,7 +16,7 @@ export class LoginForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    postNewUser(this.state)
+    postUserLogin(this.state)
     this.setState({
       email: "",
       password: ""
@@ -48,7 +48,9 @@ export class LoginForm extends React.Component {
             placeholder="Email"
             onChange={this.handleChnage}
             value={this.state.email} />
-          <p className="login--bottomtext" >Create new account</p>
+          <p className="login--bottomtext"
+            onClick={ this.props.toggleModal }
+          >Create new account</p>
         </div>
         <div className="header--userinput__div">
           <label
@@ -67,14 +69,23 @@ export class LoginForm extends React.Component {
         <button
           type="button"
           className="login__button"
+          onClick={(event) => this.handleSubmit(event)} 
           disabled={!isEnabled}>Login</button>
       </form>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  userLogin: loginCredentials => dispatch(userLogin(loginCredentials) )
+const mapStateToProps = ({ toggleModal }) => ({
+  toggleModal
 })
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+const mapDispatchToProps = dispatch => ({
+  toggleModal: bool => dispatch(toggleModal(bool))
+  // userLogin: loginCredentials => dispatch(userLogin(loginCredentials) )
+})
+
+
+// export default connect(null, mapDispatchToProps)(LoginForm);
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)
