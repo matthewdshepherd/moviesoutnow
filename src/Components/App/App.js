@@ -31,7 +31,8 @@ class App extends Component {
         <LoginForm />
         </header>
         <ReactModal
-          isOpen={true} //need to assign to a variagle in global state
+          ariaHideApp={false}
+          isOpen={this.props.toggleModal}
           style={{
             overlay: {
               position: "fixed",
@@ -60,19 +61,16 @@ class App extends Component {
   }
 }
 
-
-  const mapStateToProps = ({ movies, genres, isLoading, error }) => ({
+  const mapStateToProps = ({ movies, genres, isLoading, error, toggleModal }) => ({
     movies,
     genres,
     isLoading,
-    error
+    error,
+    toggleModal
   })
 
 const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({fetchRecentMovies, fetchGenres}, dispatch)
+  bindActionCreators({ fetchRecentMovies, fetchGenres}, dispatch)
 )
-
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

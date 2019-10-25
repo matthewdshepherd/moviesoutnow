@@ -30,13 +30,9 @@
 .signup-text {
   margin: 0;
   color: #74FBFF;
-
 }
 
-.signup--login--button {
-  border: none;
-  background: none;
-  color: #FFF;
+.signup_close_button {
   cursor: pointer;
 }
 
@@ -63,4 +59,8 @@
 
 .signup--submit__button:disabled {
   cursor: default;
+}
+
+.new--account__btn {
+  cursor: pointer;
 }

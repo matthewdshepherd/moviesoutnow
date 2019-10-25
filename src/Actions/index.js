@@ -17,3 +17,13 @@ export const setGenres = (genres) => ({
   type: 'SET_GENRES',
   genres
 })
+
+export const currentUser = currentUser => ({
+  type: 'CURRENT_USER',
+  currentUser
+})
+
+export const toggleModal = toggleState => ({
+  type: 'TOGGLE_MODAL',
+  toggleState
+})

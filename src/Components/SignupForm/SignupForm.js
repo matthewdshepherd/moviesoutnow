@@ -1,5 +1,11 @@
 import React from "react"
 import "./SignupForm.css"
+import { postNewUser } from '../../Thunks/postNewUser'
+import { connect } from 'react-redux'
+import { toggleModal } from '../../Actions'
+import { bindActionCreators } from 'redux';
+import close_button from '../../images/close_btn.png'
+
 
 export class SignupForm extends React.Component {
   constructor() {
@@ -10,6 +16,18 @@ export class SignupForm extends React.Component {
       email: "",
       password: ""
     }
+  }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.props.postNewUser(this.state)
+    this.setState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: ""
+    })
+    this.props.toggleModal()
   }
 
   handleChnage = event => {
@@ -27,7 +45,12 @@ export class SignupForm extends React.Component {
       <form className="SignupForm">
         <div className="signup-login">
           <h3 className="signup-text">SIGN UP</h3>
-          <button type="button" className="signup--login--button">Current User Login</button>
+          <img
+            src={close_button }
+            alt="Close Button"
+            className="signup_close_button"
+            onClick={() => this.props.toggleModal()}
+          />
         </div>
         <div className="first--last--name__div">
           <div className="name__div--input">
@@ -38,7 +61,7 @@ export class SignupForm extends React.Component {
             <input
             type="text"
             className="signup--name--input"
-            id="signup--name--input"
+            id="signup--name--input fname"
             placeholder="First Name"
             name="firstName"
             onChange={this.handleChnage}
@@ -53,7 +76,7 @@ export class SignupForm extends React.Component {
             <input
             type="text"
             className="signup--name--input"
-            id="signup--name--input"
+            id="signup--name--input lname"
             placeholder="Last Name"
             name="lastName"
             onChange={this.handleChnage}
@@ -94,11 +117,23 @@ export class SignupForm extends React.Component {
         <button
           type="button"
           disabled={!isEnabled}
-          className="signup--submit__button">SIGN UP</button>
+          className="signup--submit__button"
+          onClick={(event) => this.handleSubmit(event)}>SIGN UP</button>
       </form>
     )
   }
 
 }
 
-export default SignupForm
+const mapStateToProps = ({ toggleModal }) => ({ toggleModal })
+
+const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({ toggleModal, postNewUser}, dispatch)
+)
+
+// const mapDispatchToProp = dispatch => ({
+//   toggleModal: bool => dispatch(toggleModal(bool)),
+//   postNewUser: () => dispatch(postNewUser)
+// })
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm)
