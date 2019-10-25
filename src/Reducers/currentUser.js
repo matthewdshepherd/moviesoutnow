@@ -1,8 +1,9 @@
 export const currentUser = (state = {}, action) => {
   switch (action.type) {
     case 'CURRENT_USER':
+        const {id, name, email } = action.currentUser
       return {
-        id: action.id, name: action.name, email: action.email
+        id: id, name: name, email: email
       }
     default:
       return state
