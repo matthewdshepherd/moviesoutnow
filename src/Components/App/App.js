@@ -16,6 +16,39 @@ class App extends Component {
     this.props.fetchRecentMovies('https://api.themoviedb.org/3/movie/now_playing?api_key=02dd2ef67fc6cb12ff710ae75f51dda5&language=en-US&page=1')
   }
 
+  customerLogin = loginCredentials => {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(loginCredentials),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    fetch(`http://localhost:3001/api/v1/login/`, options)
+      .then(response => response.json())
+      .then(customer => this.setState({ reservations: reservations }))
+      .catch(error => console.error(error))
+  }
+
+  addCustomer = newCustomerInfo => {
+    const options = {
+      method: 'POST',
+      body: JSON.stringify(newCustomerInfo),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    fetch(`http://localhost:3001/api/v1/users/`, options)
+      .then(response => response.json())
+      .then(customer => this.setState({ reservations: reservations }))
+      .catch(error => console.error(error))
+  }
+
+  
+
+
   render() {
     return (
       <div className="App">
