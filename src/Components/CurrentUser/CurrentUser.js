@@ -13,7 +13,7 @@ export class CurrentUser extends React.Component{
     { console.log(this.props.currentUser.id) }
     return (
       <div className={this.props.currentUser.id ? 'currentUser__div' : 'currentUser__hidden'}>
-        <p className="currentUser__p--name">Current User</p>
+        <p className="currentUser__p--name">{this.props.currentUser.name}</p>
         <button
           type="button"
           className="view--favorite--movies__button">Favorite Movies</button>
