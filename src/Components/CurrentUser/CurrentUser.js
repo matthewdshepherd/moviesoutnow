@@ -3,11 +3,8 @@ import './CurrentUser.css'
 
 const CurrentUser = () => {
 
-  const handleSignOut = () => {
-    
-  }
   return (
-    <div className="currentUser__div">
+    <div className={this.props.CurrentUser.id ? '.currentUser__div' : '.currentUser__hidden'}>
       <p className="currentUser__p--name">Current User</p>
       <button
         type="button"

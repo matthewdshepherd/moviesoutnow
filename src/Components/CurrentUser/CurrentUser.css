@@ -3,6 +3,10 @@
   align-items: center;
 }
 
+.currentUser__hidden {
+  display: none;
+}
+
 .currentUser__p--name{
   color: #FFF;
   margin-right: 20px;
