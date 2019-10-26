@@ -10,6 +10,7 @@ import cinema_night from '../../images/cinema-night.png'
 import LoginForm from '../LoginForm/LoginForm'
 import SignupForm from '../SignupForm/SignupForm'
 import ReactModal from "react-modal";
+import CurrentUser from '../CurrentUser/CurrentUser'
 
 
 class App extends Component {
@@ -28,7 +29,8 @@ class App extends Component {
           alt="Logo"
           className="movie_time_logo"
         />
-        <LoginForm />
+          <LoginForm />
+          <CurrentUser />
         </header>
         <ReactModal
           ariaHideApp={false}

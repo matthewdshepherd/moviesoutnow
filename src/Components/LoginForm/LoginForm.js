@@ -35,7 +35,6 @@ export class LoginForm extends React.Component {
  }
 
   render() {
-    { console.log(this.props.currentUser.id)}
     const isEnabled = this.canBeSubmitted();
     return(
       <form className={this.props.currentUser.id ? 'header--login__hidden' : 'header--login'}>
