@@ -35,9 +35,10 @@ export class LoginForm extends React.Component {
  }
 
   render() {
+    { console.log(this.props.currentUser.id)}
     const isEnabled = this.canBeSubmitted();
     return(
-      <form className="header--login">
+      <form className={this.props.currentUser.id ? 'header--login__hidden' : 'header--login'}>
         <div className="header--userinput__div">
           <label
             className="login__label"
@@ -78,8 +79,9 @@ export class LoginForm extends React.Component {
   }
 }
 
-const mapStateToProps = ({ toggleModal }) => ({
-  toggleModal
+const mapStateToProps = ({ toggleModal, currentUser }) => ({
+  toggleModal,
+  currentUser
 })
 
 const mapDispatchToProps = (dispatch) => (
