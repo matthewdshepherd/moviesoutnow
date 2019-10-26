@@ -1,0 +1,27 @@
+.currentUser__div {
+  display: flex;
+  align-items: center;
+}
+
+.currentUser__p--name{
+  color: #FFF;
+  margin-right: 20px;
+}
+
+.view--favorite--movies__button{
+  margin-right: 20px;
+  background: none;
+  border: none;
+}
+
+.sign--out__button {
+  border: none;
+  height: 30px;
+  width: 80px;
+  border-radius: 5px;
+  background-color: #F541FF;
+  color: #FFF;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+}
