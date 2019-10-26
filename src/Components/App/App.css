@@ -1,13 +1,13 @@
 .header {
   display: flex;
   justify-content: space-between;
-  height: 27vh;
+  height: 10%;
   padding: 20px;
   align-items: center;
 }
 
 .movie_time_logo {
-  height: 150px;
+  height: 100px;
 }
 
 .SignupFormModal {
