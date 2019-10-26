@@ -3,7 +3,9 @@ import './CurrentUser.css'
 
 const CurrentUser = () => {
 
-
+  const handleSignOut = () => {
+    
+  }
   return (
     <div className="currentUser__div">
       <p className="currentUser__p--name">Current User</p>
