@@ -1,5 +1,8 @@
 import React from 'react';
-import './MovieCard.css'
+import { connect } from 'react-redux';
+import './MovieCard.css';
+import { bindActionCreators } from 'redux';
+import { addFavorite } from '../../Thunks/addFavorite';
 
 const MovieCard = ({ title, posterPath, genre, isFavorite }) => {
   var borderStyle = {
@@ -12,7 +15,6 @@ const MovieCard = ({ title, posterPath, genre, isFavorite }) => {
     width: '11vw'
   }
   const favStatus = isFavorite ? { classVal: 'favorited', elem: <h3>Liked</h3> } : { classVal: 'not-favorited', elem: <h3>Like</h3> }
-  console.log(posterPath)
   return (
     <div className="movieCard" style={borderStyle}>
       <img className="moviePoster" src={`https://image.tmdb.org/t/p/w500${posterPath}`} alt={`${title} art`} />
@@ -31,4 +33,8 @@ const MovieCard = ({ title, posterPath, genre, isFavorite }) => {
   )
 }
 
-export default MovieCard
+mapDispatchToProps = (dispatch) => (
+  bindActionCreators({addFavorite}, dispatch)
+)
+
+export default connect(null, mapDispatchToProps)(MovieCard)
