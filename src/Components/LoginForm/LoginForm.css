@@ -64,10 +64,21 @@
   border: 2px solid red;
 }
 
+.error--text__div {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 5px;
+}
+
 .error--text__div__hidden {
   display: none;
 }
 
+.error__icon {
+  height: 20px;
+}
 .error--text {
   color: red;
+  margin: 0;
+  font-size: 19px;
 }

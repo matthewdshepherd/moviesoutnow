@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 import { postUserLogin } from '../../Thunks/postUserLogin'
 import { toggleModal } from '../../Actions'
 import { bindActionCreators } from 'redux';
+import error_icon from '../../images/error_icon.png'
+
 
 
 export class LoginForm extends React.Component {
@@ -77,8 +79,11 @@ export class LoginForm extends React.Component {
             onClick={(event) => this.handleSubmit(event)} 
             disabled={!isEnabled}>Login</button>
         </form>
-        <div className="error--text__div">
-          <p className={this.props.error ? "error--text" : "error--text__div__hidden" }
+        <div className={this.props.error ? "error--text__div" : "error--text__div__hidden"}>
+          <img src={error_icon}
+            alt="Error Icon"
+            className="error__icon" />
+          <p className= "error--text"
           >The email and/or passowrd you've entered is incorrect.</p>
         </div>
       </div>
