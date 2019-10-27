@@ -27,3 +27,7 @@ export const toggleModal = toggleState => ({
   type: 'TOGGLE_MODAL',
   toggleState
 })
+
+export const signOut = () => ({
+  type: 'SIGN_OUT'
+})

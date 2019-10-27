@@ -3,6 +3,10 @@
   align-items: center;
 }
 
+.header--login__hidden {
+  display: none;
+}
+
 .header--userinput__div {
   display: flex;
   flex-direction: column;
