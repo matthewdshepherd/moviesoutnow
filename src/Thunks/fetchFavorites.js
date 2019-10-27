@@ -9,8 +9,9 @@ export const fetchFavorites = (id) => {
         throw Error(response.statusText)
       }
       const favoritesResponse = await response.json()
+      console.log(favoritesResponse.favorites)
       dispatch(isLoading(false));
-      dispatch(setFavorites(favoritesResponse));
+      dispatch(setFavorites(favoritesResponse.favorites));
     } catch (error) {
       dispatch(hasErrored(error.message))
     }

@@ -1,6 +1,6 @@
-export const getFavorites = (state = [], action) => {
+export const favorites = (state = [], action) => {
   switch (action.type) {
-    case 'GET_FAVORTIEs':
+    case 'SET_FAVORTIES':
       return action.favorites
     default:
       return state

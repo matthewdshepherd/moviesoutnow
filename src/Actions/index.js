@@ -33,6 +33,6 @@ export const signOut = () => ({
 })
 
 export const setFavorites = (favorites) => ({
-  type: 'GET_FAVORITES',
+  type: 'SET_FAVORTIES',
   favorites
 })

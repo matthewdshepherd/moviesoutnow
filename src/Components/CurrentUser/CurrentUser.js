@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import './CurrentUser.css'
-import { signOut } from '../../Actions'
+import { fetchFavorites } from '../../Thunks/fetchFavorites';
+import './CurrentUser.css';
+import { signOut } from '../../Actions';
 
 export class CurrentUser extends React.Component{
   constructor() {
@@ -10,13 +12,16 @@ export class CurrentUser extends React.Component{
   }
 
   render() {
-    { console.log(this.props.currentUser.id) }
+    const userId = this.props.currentUser.id
     return (
       <div className={this.props.currentUser.id ? 'currentUser__div' : 'currentUser__hidden'}>
         <p className="currentUser__p--name">Welcome, {this.props.currentUser.name}!</p>
-        <button
-          type="button"
-          className="view--favorite--movies__button">Favorite Movies</button>
+        <Link to='/favorites'>
+          <button
+            type="button"
+            className="view--favorite--movies__button" onClick={() => this.props.fetchFavorites(userId)}>Favorite Movies
+          </button>
+        </Link>  
         <button
           type="button"
           className="sign--out__button"
@@ -27,10 +32,13 @@ export class CurrentUser extends React.Component{
   }
 }
 
-const mapStateToProps = ({ currentUser }) => ({ currentUser })
+const mapStateToProps = ({ currentUser, favorites }) => ({
+  currentUser,
+  favorites
+})
 
 const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({ signOut }, dispatch)
+  bindActionCreators({ signOut, fetchFavorites }, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrentUser)
