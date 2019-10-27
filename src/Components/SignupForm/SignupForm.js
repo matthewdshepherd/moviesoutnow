@@ -53,7 +53,13 @@ export class SignupForm extends React.Component {
 
   canBeSubmitted() {
     const { firstName, lastName, email, password } = this.state;
-    return firstName.length > 0 && email.length > 0 && lastName.length > 0 && password.length > 0 ;
+    return firstName.length > 0 && this.checkEmail(email) && lastName.length > 0 && password.length > 5 ;
+  }
+
+  checkEmail = (email) => {
+    const emailSplit = email.split('')
+    const startIncludesSearch = emailSplit.findIndex( character => character === '@')
+    return emailSplit.includes('@') && emailSplit.includes('.', startIncludesSearch) ? true: false 
   }
 
   render() {
