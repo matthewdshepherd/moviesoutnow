@@ -24,6 +24,7 @@ export const postNewUser = (loginCredentials) => {
       const newUserResponse = await response.json()
       dispatch(isLoading(false));
       dispatch(currentUser(newUserResponse));
+      dispatch(hasErrored('', { type: 'CLEAR_ERROR' }))
     } catch (error) {
       console.log('here')
       dispatch(hasErrored(error.message))
