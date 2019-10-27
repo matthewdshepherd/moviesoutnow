@@ -53,7 +53,7 @@ export class LoginForm extends React.Component {
               className="login__label"
               htmlFor="email">Email</label>
             <input
-              className={this.props.error ? "header--userinput__input error__input" : "header--userinput__input"}
+              className={this.props.error === "Unauthorized" ? "header--userinput__input error__input" : "header--userinput__input"}
               id="email"
               type="text"
               name="email"
@@ -69,7 +69,7 @@ export class LoginForm extends React.Component {
               className="login__label"
               htmlFor="password">Password</label>
             <input
-              className={this.props.error ? "header--userinput__input error__input" : "header--userinput__input"}
+              className={this.props.error === "Unauthorized" ? "header--userinput__input error__input" : "header--userinput__input"}
               id="password"
               type="password"
               name="password"
@@ -84,7 +84,7 @@ export class LoginForm extends React.Component {
             onClick={(event) => this.handleSubmit(event)} 
             disabled={!isEnabled}>Login</button>
         </form>
-        <div className={this.props.error ? "error--text__div" : "error--text__div__hidden"}>
+        <div className={this.props.error === "Unauthorized" ? "error--text__div" : "error--text__div__hidden"}>
           <img src={error_icon}
             alt="Error Icon"
             className="error__icon" />
