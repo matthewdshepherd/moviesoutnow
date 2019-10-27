@@ -19,8 +19,10 @@ export class LoginForm extends React.Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.props.postUserLogin(this.state)
-    this.setState({
+    this.props.currentUser.id ? this.setState({
       email: "",
+      password: ""
+    }) : this.setState({
       password: ""
     })
   }
