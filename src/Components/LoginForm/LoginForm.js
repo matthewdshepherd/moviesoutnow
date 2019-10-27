@@ -86,7 +86,7 @@ export class LoginForm extends React.Component {
   }
 }
 
-const mapStateToProps = ({ toggleModal, currentUser,error }) => ({
+const mapStateToProps = ({ toggleModal, currentUser, error }) => ({
   toggleModal,
   currentUser,
   error

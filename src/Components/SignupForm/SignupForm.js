@@ -2,8 +2,9 @@ import React from "react"
 import "./SignupForm.css"
 import { postNewUser } from '../../Thunks/postNewUser'
 import { connect } from 'react-redux'
-import { toggleModal } from '../../Actions'
+import { toggleModal, hasErrored } from '../../Actions'
 import { bindActionCreators } from 'redux';
+import error_icon from '../../images/error_icon.png'
 import close_button from '../../images/close_btn.png'
 
 
@@ -22,12 +23,28 @@ export class SignupForm extends React.Component {
     event.preventDefault();
     this.props.postNewUser(this.state)
     this.setState({
+      password: ""
+    })
+    if (!this.props.error === "Internal Server Error") {
+      this.props.toggleModal()
+      this.setState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        password: ""
+      })
+    }
+  }
+
+  closeAndClearSignupFrom = () => {
+    this.props.toggleModal()
+    this.props.hasErrored('', { type: 'CLEAR_ERROR' })
+    this.setState({
       firstName: "",
       lastName: "",
       email: "",
       password: ""
     })
-    this.props.toggleModal()
   }
 
   handleChnage = event => {
@@ -46,10 +63,10 @@ export class SignupForm extends React.Component {
         <div className="signup-login">
           <h3 className="signup-text">SIGN UP</h3>
           <img
-            src={close_button }
+            src={close_button}
             alt="Close Button"
             className="signup_close_button"
-            onClick={() => this.props.toggleModal()}
+            onClick={() => this.closeAndClearSignupFrom()}
           />
         </div>
         <div className="first--last--name__div">
@@ -91,8 +108,7 @@ export class SignupForm extends React.Component {
             htmlFor="email">Email</label>
             <input
             type="text"
-            className="email--password--SU__input"
-            id="email--SU"
+            className={this.props.error === "Internal Server Error" ? "email--password--SU__input border__error" : "email--password--SU__input"}   id="email--SU"
             placeholder="Email"
             name="email"
             onChange={this.handleChnage}
@@ -104,7 +120,7 @@ export class SignupForm extends React.Component {
             className="email--password--SU__label"
             htmlFor="password">Passowrd</label>
             <input
-            type="password"
+              type="password"
             className="email--password--SU__input"
             id="password--SU"
             placeholder="Password"
@@ -119,21 +135,24 @@ export class SignupForm extends React.Component {
           disabled={!isEnabled}
           className="signup--submit__button"
           onClick={(event) => this.handleSubmit(event)}>SIGN UP</button>
+        <div className="error--message--spacing">
+          <div className={this.props.error === "Internal Server Error" ? "signup__error" : "signup__error--none"}>
+            <img src={error_icon }
+              alt="Error Icon" 
+              className="error__icon"/>
+            <p className="signup__error__p">Account with this email already exisits.</p>
+          </div>
+        </div>
       </form>
     )
   }
 
 }
 
-const mapStateToProps = ({ toggleModal }) => ({ toggleModal })
+const mapStateToProps = ({ toggleModal, error }) => ({ toggleModal, error })
 
 const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({ toggleModal, postNewUser}, dispatch)
+  bindActionCreators({ toggleModal, postNewUser, hasErrored}, dispatch)
 )
-
-// const mapDispatchToProp = dispatch => ({
-//   toggleModal: bool => dispatch(toggleModal(bool)),
-//   postNewUser: () => dispatch(postNewUser)
-// })
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupForm)
