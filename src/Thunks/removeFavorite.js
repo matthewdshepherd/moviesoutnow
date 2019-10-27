@@ -7,6 +7,7 @@ export const removeFavorite = (id, movieId) => {
       'Content-Type': 'application/json'
     }
   };
+  console.log(id ,movieId)
   return async (dispatch) => {
     try {
       dispatch(isLoading(true))
@@ -15,9 +16,11 @@ export const removeFavorite = (id, movieId) => {
         throw Error(response.statusText)
       }
       const newFavorites = await response.json()
+      console.log(newFavorites)
       dispatch(isLoading(false));
       dispatch(setFavorites(newFavorites));
     } catch (error) {
+      console.error(error)
       dispatch(hasErrored(error.message))
     }
   }

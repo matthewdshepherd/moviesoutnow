@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './MovieCard.css';
 import { bindActionCreators } from 'redux';
-import { addFavorite } from '../../Thunks/addFavorite';
+import { removeFavorite } from '../../Thunks/removeFavorite';
 
-const MovieCard = ({ title, posterPath, genre, isFavorite }) => {
+const MovieCard = ({ title, posterPath, genre, isFavorite, id, currentUser, removeFavorite }) => {
   var borderStyle = {
     border: `3px solid ${genre.borderColor}`
   }
@@ -24,7 +24,7 @@ const MovieCard = ({ title, posterPath, genre, isFavorite }) => {
         <h1 className="movieCardTitle">     {title}</h1>
         </div>
         <footer className={`bottom-bar ${favStatus.classVal}`}>
-          <div >
+          <div onClick={() => removeFavorite(currentUser.id, id)}>
             {favStatus.elem}
           </div>
         </footer>
@@ -33,8 +33,12 @@ const MovieCard = ({ title, posterPath, genre, isFavorite }) => {
   )
 }
 
-mapDispatchToProps = (dispatch) => (
-  bindActionCreators({addFavorite}, dispatch)
+const mapStateToProps = ({ currentUser }) => ({
+  currentUser
+})
+
+const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({removeFavorite}, dispatch)
 )
 
-export default connect(null, mapDispatchToProps)(MovieCard)
+export default connect(mapStateToProps, mapDispatchToProps)(MovieCard)

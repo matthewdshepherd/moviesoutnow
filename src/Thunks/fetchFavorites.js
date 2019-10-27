@@ -8,8 +8,7 @@ export const fetchFavorites = (id) => {
       if (!response.ok) {
         throw Error(response.statusText)
       }
-      const favoritesResponse = await response.json()
-      console.log(favoritesResponse.favorites)
+      const favoritesResponse = await response.json() 
       dispatch(isLoading(false));
       dispatch(setFavorites(favoritesResponse.favorites));
     } catch (error) {
