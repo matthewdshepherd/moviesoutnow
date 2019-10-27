@@ -54,3 +54,20 @@
   background-color: #f8acfc;
   cursor: default;
 }
+
+.errorHolder__div {
+  display: flex;
+  flex-direction: column;
+}
+
+.error__input {
+  border: 2px solid red;
+}
+
+.error--text__div__hidden {
+  display: none;
+}
+
+.error--text {
+  color: red;
+}
