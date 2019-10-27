@@ -35,7 +35,13 @@ export class LoginForm extends React.Component {
 
   canBeSubmitted() {
    const { email, password } = this.state;
-   return email.length > 0 && password.length > 0;
+    return this.checkEmail(email) > 0 && password.length > 0;
+  }
+
+  checkEmail = (email) => {
+    const emailSplit = email.split('')
+    const startIncludesSearch = emailSplit.findIndex(character => character === '@')
+    return emailSplit.includes('@') && emailSplit.includes('.', startIncludesSearch) ? true : false
   }
   
   createNewAccountModal = () => {
