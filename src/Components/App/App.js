@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchRecentMovies } from '../../Thunks/fetchRecentMovies';
 import { fetchGenres } from '../../Thunks/fetchGenres';
 import { bindActionCreators } from 'redux';
 import Movies from '../../Containers/Movies/Movies';
 import './App.css';
-import movie_time_logo from '../../images/movie_time.png'
-import cinema_night from '../../images/cinema-night.png'
-import LoginForm from '../LoginForm/LoginForm'
-import SignupForm from '../SignupForm/SignupForm'
+import movie_time_logo from '../../images/movie_time.png';
+import cinema_night from '../../images/cinema-night.png';
+import LoginForm from '../LoginForm/LoginForm';
+import SignupForm from '../SignupForm/SignupForm';
 import ReactModal from "react-modal";
-import CurrentUser from '../CurrentUser/CurrentUser'
+import CurrentUser from '../CurrentUser/CurrentUser';
+import Favorites from '../../Containers/Favorites/Favorites';
 
 
 class App extends Component {
@@ -57,7 +59,12 @@ class App extends Component {
           />
           <SignupForm />
         </ReactModal>
-      <Movies />
+        <Route exact path='/'>
+          <Movies />
+        </Route>
+        <Route exact path='/favorites'>
+          <Favorites />
+        </Route>
     </div>
     )
   }
