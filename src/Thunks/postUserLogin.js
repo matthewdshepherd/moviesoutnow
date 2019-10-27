@@ -18,8 +18,8 @@ export const postUserLogin = (loginCredentials) => {
       }
       const currentUserResponse = await response.json()
       dispatch(isLoading(false));
-      console.log(currentUserResponse)
       dispatch(currentUser(currentUserResponse));
+      dispatch(hasErrored('', { type: 'CLEAR_ERROR'}))
     } catch (error) {
       dispatch(hasErrored(error.message))
     }

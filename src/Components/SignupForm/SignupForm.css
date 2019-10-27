@@ -61,6 +61,35 @@
   cursor: default;
 }
 
+.error--message--spacing {
+  height: 25px
+}
+
 .new--account__btn {
   cursor: pointer;
+}
+
+.signup__error--none {
+  display: none;
+}
+
+.signup__error {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: red;
+  font-size: 20px;
+}
+
+.signup__error__p {
+  margin-bottom: 0;
+}
+
+.error__icon {
+  height: 23px;
+  margin-right: 10px;
+}
+
+.border__error {
+  border: 2px solid red;
 }
