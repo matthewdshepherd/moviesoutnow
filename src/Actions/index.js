@@ -31,7 +31,3 @@ export const toggleModal = toggleState => ({
 export const signOut = () => ({
   type: 'SIGN_OUT'
 })
-
-export const clearError = () => ({
-  type: 'CLEAR_ERROR'
-})

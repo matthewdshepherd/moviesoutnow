@@ -3,7 +3,7 @@ export const hasErrored = (state = '', action) => {
     case 'HAS_ERRORED':
       return action.msg
     case 'CLEAR_ERROR':
-    return ""
+      return ""
     default:
       return state
   }
