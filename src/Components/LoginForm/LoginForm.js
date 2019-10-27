@@ -3,7 +3,7 @@ import "./LoginForm.css"
 import movie_time_logo from '../../images/movie_time.png'
 import { connect } from 'react-redux'
 import { postUserLogin } from '../../Thunks/postUserLogin'
-import { toggleModal } from '../../Actions'
+import { toggleModal, hasErrored } from '../../Actions'
 import { bindActionCreators } from 'redux';
 import error_icon from '../../images/error_icon.png'
 
@@ -36,7 +36,12 @@ export class LoginForm extends React.Component {
   canBeSubmitted() {
    const { email, password } = this.state;
    return email.length > 0 && password.length > 0;
- }
+  }
+  
+  createNewAccountModal = () => {
+    this.props.toggleModal()
+    this.props.hasErrored('', { type: 'CLEAR_ERROR' })
+  }
 
   render() {
     const isEnabled = this.canBeSubmitted();
@@ -56,7 +61,7 @@ export class LoginForm extends React.Component {
               onChange={this.handleChnage}
               value={this.state.email} />
             <p className="login--bottomtext new--account__btn"
-              onClick={ this.props.toggleModal }
+              onClick={() => this.createNewAccountModal()}
             >Create new account</p>
           </div>
           <div className="header--userinput__div">
@@ -98,7 +103,7 @@ const mapStateToProps = ({ toggleModal, currentUser, error }) => ({
 })
 
 const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({ toggleModal, postUserLogin}, dispatch)
+  bindActionCreators({ toggleModal, postUserLogin, hasErrored}, dispatch)
 )
 
 
