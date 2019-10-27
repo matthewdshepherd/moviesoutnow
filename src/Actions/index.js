@@ -32,7 +32,7 @@ export const signOut = () => ({
   type: 'SIGN_OUT'
 })
 
-export const getFavorites = (favorites) => ({
-  type: 'ADD_FAVORITE',
+export const setFavorites = (favorites) => ({
+  type: 'GET_FAVORITES',
   favorites
 })
