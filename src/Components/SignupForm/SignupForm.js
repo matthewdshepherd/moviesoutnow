@@ -25,14 +25,8 @@ export class SignupForm extends React.Component {
     this.setState({
       password: ""
     })
-    if (!this.props.error === "Internal Server Error") {
-      this.props.toggleModal()
-      this.setState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        password: ""
-      })
+    if (!(this.props.error === "Internal Server Error")) {
+      this.closeAndClearSignupFrom()
     }
   }
 
