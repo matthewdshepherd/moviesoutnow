@@ -23,6 +23,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.props.currentUser)
     return (
       <div className="App">
       <header className="header">
@@ -31,8 +32,8 @@ class App extends Component {
           alt="Logo"
           className="movie_time_logo"
         />
-          <LoginForm />
-          <CurrentUser />
+          {!this.props.currentUser.name && <LoginForm />}
+          {this.props.currentUser.name && <CurrentUser />}
         </header>
         <ReactModal
           ariaHideApp={false}
@@ -70,12 +71,13 @@ class App extends Component {
   }
 }
 
-  const mapStateToProps = ({ movies, genres, isLoading, error, toggleModal }) => ({
+  const mapStateToProps = ({ movies, genres, isLoading, error, toggleModal, currentUser }) => ({
     movies,
     genres,
     isLoading,
     error,
-    toggleModal
+    toggleModal, 
+    currentUser
   })
 
 const mapDispatchToProps = (dispatch) => (
