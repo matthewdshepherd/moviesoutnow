@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import MovieCard from '../../Components/MovieCard/MovieCard';
 
 const Favorites = ({ favorites, genres, isLoading, movies }) => {
-  console.log(favorites)
   const movieCards = favorites.map(favorite => {
     const favorited = favorites.includes(favorite)
     const foundMovie = movies.filter(movie => movie.title === favorite.title)[0]
@@ -22,7 +21,7 @@ const Favorites = ({ favorites, genres, isLoading, movies }) => {
     })
     return (
       <section className='section--movies-container'>
-        {!isLoading && movieCards}
+        {favorites && !isLoading && movieCards}
     </section>
   )
 }

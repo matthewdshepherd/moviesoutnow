@@ -80,7 +80,7 @@ class App extends Component {
   })
 
 const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({ fetchRecentMovies, fetchGenres}, dispatch)
+  bindActionCreators({ fetchRecentMovies, fetchGenres }, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)

@@ -1,6 +1,8 @@
 import { isLoading, hasErrored, setFavorites } from '../Actions'
+import { fetchFavorites } from './fetchFavorites';
 
-export const addFavorite = ( userId ,movieInfo) => {
+
+export const addFavorite = ( userId , movieInfo) => {
   const { id, title, poster_path, release_date, vote_average, overview } = movieInfo;
   const cleanedInfo = {
     movie_id: id,
@@ -24,9 +26,8 @@ export const addFavorite = ( userId ,movieInfo) => {
       if (!response.ok) {
         throw Error(response.statusText)
       }
-      const favoritesResponse = await response.json()
       dispatch(isLoading(false));
-      dispatch(setFavorites(favoritesResponse));
+      dispatch(fetchFavorites(userId))
     } catch (error) {
       dispatch(hasErrored(error.message))
     }

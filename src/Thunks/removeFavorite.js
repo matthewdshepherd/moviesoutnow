@@ -1,13 +1,13 @@
 import { isLoading, hasErrored, setFavorites } from '../Actions'
+import { fetchFavorites } from './fetchFavorites';
 
 export const removeFavorite = (id, movieId) => {
   const options = {
     method: 'DELETE',
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": 'application/json'
     }
   };
-  console.log(id ,movieId)
   return async (dispatch) => {
     try {
       dispatch(isLoading(true))
@@ -15,10 +15,8 @@ export const removeFavorite = (id, movieId) => {
       if (!response.ok) {
         throw Error(response.statusText)
       }
-      const newFavorites = await response.json()
-      console.log(newFavorites)
       dispatch(isLoading(false));
-      dispatch(setFavorites(newFavorites));
+      dispatch(fetchFavorites(id));
     } catch (error) {
       console.error(error)
       dispatch(hasErrored(error.message))

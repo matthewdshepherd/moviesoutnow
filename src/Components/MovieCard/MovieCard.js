@@ -28,11 +28,11 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
         <footer className='footer--accents'>
           { isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={() => removeFavorite(currentUser.id, id)}>
             {favStatus.elem}
-            <h2>{voteAverage}</h2>
+            <h3>{`${voteAverage * 10}%`}</h3>
           </div>}
           { !isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={() => addFavorite(currentUser.id, { id, title, poster_path: posterPath, release_date: releaseDate, vote_average: voteAverage, overview})}>
             {favStatus.elem}
-            <h2>{`${voteAverage * 10}%`}</h2>
+            <h3>{`${voteAverage * 10}%`}</h3>
           </div>}        
         </footer>
       </div>
