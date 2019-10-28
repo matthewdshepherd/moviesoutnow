@@ -34,12 +34,15 @@ export class CurrentUser extends React.Component{
             type="button"
             className="view--favorite--movies__button">Favorite Movies
           </button>
-        </Link>  
+        </Link>
         <button
-          type="button"
-          className="sign--out__button"
-          onClick={ (event) => this.handleClick(event)}
-        >Sign Out</button>
+            type="button"
+            className="sign--out__button"
+            onClick={(event) => this.handleClick(event)}>
+          <Link to='/' className='sign--out__button'>
+            Sign Out
+          </Link>
+        </button>
       </div>
     )
   }

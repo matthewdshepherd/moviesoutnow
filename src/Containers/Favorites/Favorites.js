@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './Favorites.css';
 import MovieCard from '../../Components/MovieCard/MovieCard';
 
 const Favorites = ({ favorites, genres, isLoading, movies }) => {
@@ -22,6 +23,7 @@ const Favorites = ({ favorites, genres, isLoading, movies }) => {
     return (
       <section className='section--movies-container'>
         {favorites && !isLoading && movieCards}
+        {favorites.length === 0 && <h1 className='no-favs--error'>You Have No Favorites Yet. Try Adding Some!</h1>}
     </section>
   )
 }
