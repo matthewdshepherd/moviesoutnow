@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchRecentMovies } from '../../Thunks/fetchRecentMovies';
 import { fetchGenres } from '../../Thunks/fetchGenres';
@@ -25,12 +25,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <header className="header">
-        <img
-          src={movie_time_logo}
-          alt="Logo"
-          className="movie_time_logo"
-        />
+        <header className="header">
+          <Link to='/'>
+            <img
+              src={movie_time_logo}
+              alt="Logo"
+              className="movie_time_logo"
+            />
+          </Link>
           {!this.props.currentUser.name && <LoginForm />}
           {this.props.currentUser.name && <CurrentUser />}
         </header>
