@@ -36,8 +36,9 @@ export class LoginForm extends React.Component {
 
   render() {
     const isEnabled = this.canBeSubmitted();
+    const hidden = {display: 'none'}
     return(
-      <form className="header--login">
+      <form className="header--login" onSubmit={(event) => this.handleSubmit(event)}>
         <div className="header--userinput__div">
           <label
             className="login__label"
@@ -49,7 +50,8 @@ export class LoginForm extends React.Component {
             name="email"
             placeholder="Email"
             onChange={this.handleChange}
-            value={this.state.email} />
+            value={this.state.email}
+          />
           <p className="login--bottomtext new--account__btn"
             onClick={ this.props.toggleModal }
           >Create new account</p>
@@ -65,9 +67,11 @@ export class LoginForm extends React.Component {
             name="password"
             placeholder="Password"
             onChange={this.handleChange}
-            value={this.state.password} />
+            value={this.state.password}
+          />
           <p className="login--bottomtext">Forgot account?</p>
         </div>
+        <input type='submit' style={hidden} />
         <button
           type="button"
           className="login__button"
