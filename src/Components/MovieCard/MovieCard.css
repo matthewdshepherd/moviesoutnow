@@ -53,3 +53,8 @@ div.movieCardGenre {
   justify-content: space-between;
   min-width: 100%;
 }
+
+.favorite-icon {
+  height: 5vh;
+  width: 5vh;
+}

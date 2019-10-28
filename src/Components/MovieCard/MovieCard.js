@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './MovieCard.css';
+import favorited_movie from '../../images/favorited__movie.png';
+import isNotFavorited from '../../images/unfavorited__movie.png';
 import { bindActionCreators } from 'redux';
 import { removeFavorite } from '../../Thunks/removeFavorite';
 import { addFavorite } from '../../Thunks/addFavorite';
@@ -16,7 +18,7 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
     padding: '5px 15px',
     width: '11vw'
   }
-  const favStatus = isFavorite ? { classVal: 'favorited', elem: <h3 className='like--btn'>Liked</h3> } : { classVal: 'not-favorited', elem: <h3 className='like--btn'>Like</h3> }
+  const favStatus = isFavorite ? { classVal: 'favorited', elem: <img className='favorite-icon' src={favorited_movie} alt='is favorite'/> } : { classVal: 'not-favorited', elem: <img className='favorite-icon' src={isNotFavorited} alt='is not favorite'/> }
   return (
     <div className="movieCard" style={borderStyle}>
       <img className="moviePoster" src={`https://image.tmdb.org/t/p/w500${posterPath}`} alt={`${title} art`} />
