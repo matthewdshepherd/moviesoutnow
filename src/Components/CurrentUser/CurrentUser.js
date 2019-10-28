@@ -19,7 +19,7 @@ export class CurrentUser extends React.Component{
         <Link to='/favorites'>
           <button
             type="button"
-            className="view--favorite--movies__button" onClick={() => this.props.fetchFavorites(userId)}>Favorite Movies
+            className="view--favorite--movies__button">Favorite Movies
           </button>
         </Link>  
         <button

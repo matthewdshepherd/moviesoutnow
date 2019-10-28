@@ -1,4 +1,5 @@
 import { isLoading, hasErrored, currentUser } from '../Actions'
+import { fetchFavorites } from './fetchFavorites';
 
 export const postUserLogin = (loginCredentials) => {
   return async (dispatch) => {
@@ -17,7 +18,8 @@ export const postUserLogin = (loginCredentials) => {
       }
       const currentUserResponse = await response.json()
       dispatch(isLoading(false));
-      dispatch(currentUser(currentUserResponse));
+      dispatch(fetchFavorites(currentUserResponse.id))
+      await dispatch(currentUser(currentUserResponse));
       dispatch(hasErrored('', { type: 'CLEAR_ERROR'}))
     } catch (error) {
       dispatch(hasErrored(error.message))

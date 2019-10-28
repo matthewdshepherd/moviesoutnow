@@ -25,7 +25,7 @@ export class LoginForm extends React.Component {
     })
   }
 
-  handleChnage = event => {
+  handleChange = event => {
     this.setState( {[event.target.name]: event.target.value})
   };
 
@@ -48,7 +48,7 @@ export class LoginForm extends React.Component {
             type="text"
             name="email"
             placeholder="Email"
-            onChange={this.handleChnage}
+            onChange={this.handleChange}
             value={this.state.email} />
           <p className="login--bottomtext new--account__btn"
             onClick={ this.props.toggleModal }
@@ -64,9 +64,9 @@ export class LoginForm extends React.Component {
             type="password"
             name="password"
             placeholder="Password"
-            onChange={this.handleChnage}
+            onChange={this.handleChange}
             value={this.state.password} />
-          <p className="login--bottomtext" >Forgot account?</p>
+          <p className="login--bottomtext">Forgot account?</p>
         </div>
         <button
           type="button"
@@ -83,7 +83,7 @@ const mapStateToProps = ({ toggleModal }) => ({
 })
 
 const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({ toggleModal, postUserLogin}, dispatch)
+  bindActionCreators({ toggleModal, postUserLogin }, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginForm)

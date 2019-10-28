@@ -23,7 +23,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props.currentUser)
     return (
       <div className="App">
       <header className="header">
@@ -81,7 +80,7 @@ class App extends Component {
   })
 
 const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({ fetchRecentMovies, fetchGenres}, dispatch)
+  bindActionCreators({ fetchRecentMovies, fetchGenres }, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(App)
