@@ -5,10 +5,17 @@ import { bindActionCreators } from 'redux';
 import { fetchFavorites } from '../../Thunks/fetchFavorites';
 import './CurrentUser.css';
 import { signOut } from '../../Actions';
+import { setFavorites } from '../../Actions';
 
 export class CurrentUser extends React.Component{
   constructor() {
     super()
+  }
+
+  handleClick = (event) => {
+    event.preventDefault();
+    this.props.signOut();
+    this.props.setFavorites([]);
   }
 
   render() {
@@ -31,7 +38,7 @@ export class CurrentUser extends React.Component{
         <button
           type="button"
           className="sign--out__button"
-          onClick={ () => this.props.signOut()}
+          onClick={ (event) => this.handleClick(event)}
         >Sign Out</button>
       </div>
     )
@@ -44,7 +51,7 @@ const mapStateToProps = ({ currentUser, favorites }) => ({
 })
 
 const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({ signOut, fetchFavorites }, dispatch)
+  bindActionCreators({ signOut, fetchFavorites, setFavorites }, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrentUser)
