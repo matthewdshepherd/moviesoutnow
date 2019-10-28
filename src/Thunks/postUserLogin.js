@@ -2,7 +2,6 @@ import { isLoading, hasErrored, currentUser } from '../Actions'
 
 export const postUserLogin = (loginCredentials) => {
   return async (dispatch) => {
-    console.log(loginCredentials)
     const options = {
       method: 'POST',
       body: JSON.stringify(loginCredentials),

@@ -31,3 +31,8 @@ export const toggleModal = toggleState => ({
 export const signOut = () => ({
   type: 'SIGN_OUT'
 })
+
+export const setFavorites = (favorites) => ({
+  type: 'SET_FAVORTIES',
+  favorites
+})
