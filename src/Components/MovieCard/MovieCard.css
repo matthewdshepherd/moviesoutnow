@@ -16,11 +16,11 @@
 }
 
 .moviePosterOverlay {
-  bottom: 105px;
+  bottom: 14.45vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 110px;
+  max-height: 95px;
   width: 100%;
   position: relative;
   background-color: rgba(140, 139, 139, .85);
@@ -42,12 +42,13 @@ div.movieCardGenre {
 }
 
 .footer--accents {
-  bottom: 4vh;
-  position: relative;
+  bottom: -2vh;
+  position: absolute;
   width: 100%;
 }
 
 .bottom-bar {
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
