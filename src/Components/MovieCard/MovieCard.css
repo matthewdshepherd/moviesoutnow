@@ -38,5 +38,18 @@ div.movieCardGenre {
     position: relative;
     text-align: center;
     top: -30px;
-    width: 45%;
+    min-width: 100%;
+}
+
+.footer--accents {
+  bottom: 4vh;
+  position: relative;
+  width: 100%;
+}
+
+.bottom-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-width: 100%;
 }
