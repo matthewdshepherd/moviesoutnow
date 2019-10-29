@@ -3,6 +3,7 @@ import { fetchFavorites } from './fetchFavorites';
 
 export const removeFavorite = (event, id, movieId) => {
   event.stopPropagation();
+  event.preventDefault();
   const options = {
     method: 'DELETE',
     headers: {
