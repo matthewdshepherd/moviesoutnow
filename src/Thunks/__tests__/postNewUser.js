@@ -25,5 +25,10 @@ describe('postNewUser', () => {
     }));
   });
 
-  
+  it('should call dispatch with isLoading(true)', () => {
+    const thunk = postNewUser(mockLoginCreds);
+    thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
+  });  
 })
