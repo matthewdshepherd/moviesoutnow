@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import './Favorites.css';
 import MovieCard from '../../Components/MovieCard/MovieCard';
 
-const Favorites = ({ favorites, genres, isLoading, movies }) => {
+export const Favorites = ({ favorites, genres, isLoading, movies }) => {
   const movieCards = favorites.map(favorite => {
     const favorited = favorites.includes(favorite)
     const foundMovie = movies.filter(movie => movie.title === favorite.title)[0]
@@ -28,7 +28,7 @@ const Favorites = ({ favorites, genres, isLoading, movies }) => {
   )
 }
 
-const mapStateToProps = ({ favorites, genres, isLoading, movies }) => ({
+export const mapStateToProps = ({ favorites, genres, isLoading, movies }) => ({
   favorites,
   genres,
   isLoading,
