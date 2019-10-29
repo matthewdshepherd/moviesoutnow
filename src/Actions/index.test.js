@@ -12,7 +12,14 @@ describe('actions', () => {
   });
 
   it('should have a type of HAS_ERRORED', () => {
+    const expectedAction = {
+      type: 'HAS_ERRORED',
+      msg: 'Something went wrong'
+    };
 
+    const result = actions.hasErrored('Something went wrong');
+
+    expect(result).toEqual(expectedAction);
   });
 
   it('should have a type of SET_RECENT_MOVIES', () => {
