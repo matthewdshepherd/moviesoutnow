@@ -56,5 +56,10 @@ describe('fetchFavorites', () => {
     }));
   });
 
+  it('should call dispatch with isLoading(true)', () => {
+    const thunk = fetchFavorites(2);
+    thunk(mockDispatch);
 
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
+  })
 })
