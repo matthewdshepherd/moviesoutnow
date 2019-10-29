@@ -1,4 +1,4 @@
-import { setFavorites, favorites } from '../setFavorites';
+import { favorites } from '../setFavorites';
 
 describe('favorites reducer', () => {
   it('should return the initial state', () => {
