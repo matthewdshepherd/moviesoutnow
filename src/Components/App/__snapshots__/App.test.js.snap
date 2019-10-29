@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match the snapshot 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="header"
+  >
+    <Link
+      to="/"
+    >
+      <img
+        alt="Logo"
+        className="movie_time_logo"
+        src="movie_time.png"
+      />
+    </Link>
+    <Connect(LoginForm) />
+  </header>
+  <Modal
+    ariaHideApp={false}
+    bodyOpenClassName="ReactModal__Body--open"
+    className="SignupFormModal"
+    closeTimeoutMS={0}
+    contentLabel="Signup Form"
+    isOpen={true}
+    overlayClassName="SignupFormOverlay"
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+    style={
+      Object {
+        "content": Object {},
+        "overlay": Object {
+          "backgroundColor": "rgba(0, 0, 0, 0.85)",
+          "bottom": 0,
+          "left": 0,
+          "position": "fixed",
+          "right": 0,
+          "top": 0,
+        },
+      }
+    }
+  >
+    <img
+      alt="Cinema Night Art Work"
+      className="cinema_night_artwork"
+      src="cinema-night.png"
+    />
+    <Connect(SignupForm) />
+  </Modal>
+  <Route
+    exact={true}
+    path="/"
+  >
+    <Connect(Movies) />
+  </Route>
+  <Route
+    path="/movies/:id"
+  >
+    <Connect(MoviePage) />
+  </Route>
+  <Route
+    exact={true}
+    path="/favorites"
+  >
+    <Connect(Favorites) />
+  </Route>
+</div>
+`;
