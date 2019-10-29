@@ -27,5 +27,20 @@ describe('postUserLogin', () => {
     thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
-  })
+  });
+
+  it('should call fetch with correct url and options', () => {
+    const url = 'http://localhost:3001/api/v1/login/';
+    const mockOptions = {
+      method: 'POST',
+      body: JSON.stringify(mockLoginCreds),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+    const thunk = postUserLogin(mockLoginCreds);
+    thunk(mockDispatch);
+
+    expect(window.fetch).toHaveBeenCalledWith(url, mockOptions);
+  });
 })
