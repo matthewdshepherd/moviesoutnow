@@ -59,7 +59,14 @@ describe('actions', () => {
   });
 
   it('should have a type of TOGGLE_MODAL', () => {
+    const expectedAction = {
+      type: 'TOGGLE_MODAL',
+      toggleState: true
+    };
 
+    const result = actions.toggleModal(true);
+
+    expect(result).toEqual(expectedAction);
   });
 
   it('should have a type of SIGN_OUT', () => {
