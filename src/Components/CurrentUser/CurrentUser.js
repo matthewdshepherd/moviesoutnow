@@ -2,10 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchFavorites } from '../../Thunks/fetchFavorites';
 import './CurrentUser.css';
 import { signOut } from '../../Actions';
-import { setFavorites } from '../../Actions';
 
 export class CurrentUser extends React.Component{
 
@@ -40,11 +38,10 @@ export class CurrentUser extends React.Component{
 
 const mapStateToProps = ({ currentUser, favorites }) => ({
   currentUser,
-  favorites
 })
 
 const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({ signOut, fetchFavorites, setFavorites }, dispatch)
+  bindActionCreators({ signOut }, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrentUser)
