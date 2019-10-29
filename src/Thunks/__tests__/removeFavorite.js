@@ -8,8 +8,13 @@ describe('addFavorite', () => {
   let mockDispatch
   let mockMovieId
   let mockUserId
+  let mockEvent
 
   beforeEach(() => {
+    mockEvent = {
+      preventDefault: jest.fn(),
+      stopPropagation: jest.fn()
+    }
     mockMovieId = 4575557
     mockUserId = 3;
     mockDispatch = jest.fn();
@@ -19,7 +24,7 @@ describe('addFavorite', () => {
   });
 
   it('should call dispatch with isLoading(true)', () => {
-    const thunk = removeFavorite(mockUserId, mockMovieId);
+    const thunk = removeFavorite(mockEvent, mockUserId, mockMovieId);
     thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
@@ -33,21 +38,21 @@ describe('addFavorite', () => {
         "Content-Type": 'application/json'
       }
     };
-    const thunk = removeFavorite(mockUserId, mockMovieId);
+    const thunk = removeFavorite(mockEvent, mockUserId, mockMovieId);
     thunk(mockDispatch);
 
     expect(window.fetch).toHaveBeenCalledWith(mockUrl, mockOptions);
   });
 
   it('should dispatch with isLoading(false) if response is ok', async () => {
-    const thunk = removeFavorite(mockUserId, mockMovieId);
+    const thunk = removeFavorite(mockEvent, mockUserId, mockMovieId);
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
 
   it('should dispatch fetchFavorites with correct args', async () => {
-    const thunk = removeFavorite(mockUserId, mockMovieId);
+    const thunk = removeFavorite(mockEvent, mockUserId, mockMovieId);
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(fetchFavorites(mockUserId));
@@ -58,7 +63,7 @@ describe('addFavorite', () => {
       ok: false,
       statusText: 'Nope'
     }));
-    const thunk = removeFavorite(mockUserId, mockMovieId);
+    const thunk = removeFavorite(mockEvent, mockUserId, mockMovieId);
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(hasErrored('Nope'));

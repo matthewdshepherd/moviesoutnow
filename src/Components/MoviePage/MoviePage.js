@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 
 
 const MoviePage = ({ movies, genres, currentMovie}) => {
-    
-    const { title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids, id } = movies.find( movie => movie.id === currentMovie)
+    const foundMovie = movies.find(movie => movie.id === currentMovie)
+    const { title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids, id } = foundMovie
    
     const getGenres = genres.reduce( (acc, genre) => {
         genre_ids.forEach( movieGenre => {
