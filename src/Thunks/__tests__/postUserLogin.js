@@ -78,4 +78,15 @@ describe('postUserLogin', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(hasErrored(''));
   });
+
+  it('should dispatch hasErrored if response is not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false,
+      statusText: 'This is not ok'
+    }));
+    const thunk = postUserLogin(mockLoginCreds);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(hasErrored('This is not ok'))
+  });
 })
