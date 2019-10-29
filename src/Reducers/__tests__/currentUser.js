@@ -8,7 +8,7 @@ describe('currentUser reducer', () => {
     expect(result).toEqual(expected);
   });
 
-it('should return a movie id', () => {
+it('should return a user object', () => {
   const mockAction = {
     type: 'CURRENT_USER',
     currentUser: {
@@ -18,7 +18,16 @@ it('should return a movie id', () => {
     }
   }
   const expected = mockAction.currentUser;
-  const result = currentUser(null, mockAction);
+  const result = currentUser({}, mockAction);
   expect(result).toEqual(expected);
 });
+  
+  it('should sign out a current user', () => {
+    const mockAction = {
+      type: 'SIGN_OUT'
+    }
+    const expected = {}
+    const result = currentUser({}, mockAction);
+    expect(result).toEqual(expected);
+  });
 });
