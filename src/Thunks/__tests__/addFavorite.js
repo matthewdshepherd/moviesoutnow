@@ -12,7 +12,8 @@ describe('addFavorite', () => {
 
   beforeEach(() => {
     mockEvent = {
-      preventDefault: jest.fn()
+      preventDefault: jest.fn(),
+      stopPropagation: jest.fn()
     };
     mockMovie = {
       id: 2,
