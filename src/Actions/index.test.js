@@ -80,10 +80,25 @@ describe('actions', () => {
   });
 
   it('should have a type of SET_FAVORITES', () => {
+    const favorites = [{name: 'movie1', id: 4575557}, {name: 'movie2', id: 45}]
+    const expectedAction = {
+      type: 'SET_FAVORITES',
+      favorites: favorites
+    };
 
+    const result = actions.setFavorites(favorites);
+
+    expect(result).toEqual(expectedAction);
   });
 
   it('should have a type of SET_CURRENT_MOVIE', () => {
+    const expectedAction = {
+      type: 'SET_CURRENT_MOVIE',
+      currentMovieId: 4575557
+    };
 
+    const result = actions.setCurrentMovie(4575557);
+
+    expect(result).toEqual(expectedAction);
   });
 });
