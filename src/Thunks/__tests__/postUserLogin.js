@@ -21,4 +21,11 @@ describe('postUserLogin', () => {
       })
     }));
   });
+
+  it('should dispatch isLoading(true)', () => {
+    const thunk = postUserLogin(mockLoginCreds);
+    thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
+  })
 })
