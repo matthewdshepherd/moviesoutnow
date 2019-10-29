@@ -1,4 +1,4 @@
-import { removeFavorite } from '../addFavorite';
+import { removeFavorite } from '../removeFavorite';
 import { fetchFavorites } from '../fetchFavorites';
 import { isLoading, hasErrored } from '../../Actions';
 
@@ -18,5 +18,10 @@ describe('addFavorite', () => {
     }));
   });
 
-  
+  it('should call dispatch with isLoading(true)', () => {
+    const thunk = removeFavorite(mockUserId, mockMovieId);
+    thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
+  });
 });
