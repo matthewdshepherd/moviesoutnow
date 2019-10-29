@@ -8,9 +8,6 @@ import { signOut } from '../../Actions';
 import { setFavorites } from '../../Actions';
 
 export class CurrentUser extends React.Component{
-  constructor() {
-    super()
-  }
 
   handleClick = (event) => {
     event.preventDefault();
