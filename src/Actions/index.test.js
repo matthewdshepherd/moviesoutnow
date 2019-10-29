@@ -35,7 +35,15 @@ describe('actions', () => {
   });
 
   it('should have a type of SET_GENRES', () => {
+    const genres = [{name: 'genre1'}, {name: 'genre2'}]
+    const expectedAction = {
+      type: 'SET_GENRES',
+      genres: genres
+    };
 
+    const result = actions.setGenres(genres);
+
+    expect(result).toEqual(expectedAction);
   });
 
   it('should have a type of CURRENT_USER', () => {
