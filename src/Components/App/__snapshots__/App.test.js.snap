@@ -7,15 +7,29 @@ exports[`App should match the snapshot 1`] = `
   <header
     className="header"
   >
-    <Link
-      to="/"
+    <div
+      className="logo--homebtn__div"
     >
-      <img
-        alt="Logo"
-        className="movie_time_logo"
-        src="movie_time.png"
-      />
-    </Link>
+      <Link
+        to="/"
+      >
+        <img
+          alt="Logo"
+          className="movie_time_logo"
+          src="movie_time.png"
+        />
+      </Link>
+      <Link
+        to="/"
+      >
+        <button
+          className="go-home__button"
+          type="button"
+        >
+          Home
+        </button>
+      </Link>
+    </div>
     <Connect(LoginForm) />
   </header>
   <Modal

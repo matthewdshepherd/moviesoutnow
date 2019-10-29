@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import './CurrentUser.css';
-import { signOut } from '../../Actions';
+import { signOut, setFavorites } from '../../Actions';
 
 export class CurrentUser extends React.Component{
 
@@ -36,12 +36,12 @@ export class CurrentUser extends React.Component{
   }
 }
 
-const mapStateToProps = ({ currentUser, favorites }) => ({
+export const mapStateToProps = ({ currentUser }) => ({
   currentUser,
 })
 
-const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({ signOut }, dispatch)
+export const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({ signOut, setFavorites }, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrentUser)
