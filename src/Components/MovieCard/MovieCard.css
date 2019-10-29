@@ -17,10 +17,6 @@
   height: auto;
 }
 
-.view--movies {
-  z-index: 2000;
-}
-
 .moviePosterOverlay {
   display: flex;
   flex-direction: column;
@@ -32,25 +28,24 @@
   background-color: rgba(140, 139, 139, .85);
 }
 
-.movieCardTitle,
-.movieCardGenre {
-  color: black;
-}
-
-div.movieCardGenre {
+div.movieCardGenre__div {
     font-size: .7rem;
-    left: -2%;
+    /* left: -2%; */
     padding: 1px 15px;
     position: relative;
     text-align: center;
-    top: -30px;
-    min-width: 100%;
+    top: -20%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer--accents {
-  bottom: -2vh;
-  position: absolute;
+  /* bottom: -2vh; */
+  /* position: absolute; */
   width: 100%;
+  margin: 0;
 }
 
 .bottom-bar {
@@ -62,6 +57,12 @@ div.movieCardGenre {
 }
 
 .favorite-icon {
-  height: 5vh;
-  width: 5vh;
+  height: 50px;
 }
+
+.movieCardTitle,
+.movieCardGenre {
+  color: black;
+  margin: 0;
+}
+
