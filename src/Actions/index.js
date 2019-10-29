@@ -36,3 +36,8 @@ export const setFavorites = (favorites) => ({
   type: 'SET_FAVORTIES',
   favorites
 })
+
+export const setCurrentMovie = currentMovieId => ({
+  type: 'SET_CURRENT_MOVIE',
+  currentMovieId
+})
