@@ -8,9 +8,8 @@ import { bindActionCreators } from 'redux';
 import { removeFavorite } from '../../Thunks/removeFavorite';
 import { addFavorite } from '../../Thunks/addFavorite';
 import { clickHandler } from '../../Thunks/clickHandler'
-import { setCurrentMovie } from '../../Actions'
 
-const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genre, isFavorite, id, currentUser, removeFavorite, addFavorite, clickHandler, setCurrentMovie}) => {
+export const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genre, isFavorite, id, currentUser, removeFavorite, addFavorite, clickHandler}) => {
   var borderStyle = {
     border: `3px solid ${genre.borderColor}`
   }
@@ -62,12 +61,12 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
   )
 }
 
-const mapStateToProps = ({ currentUser }) => ({
+export const mapStateToProps = ({ currentUser }) => ({
   currentUser
 })
 
-const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({removeFavorite, addFavorite, setCurrentMovie, clickHandler}, dispatch)
+export const mapDispatchToProps = (dispatch) => (
+  bindActionCreators({removeFavorite, addFavorite, clickHandler}, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieCard)
