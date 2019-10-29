@@ -42,8 +42,6 @@ div.movieCardGenre__div {
 }
 
 .footer--accents {
-  /* bottom: -2vh; */
-  /* position: absolute; */
   width: 100%;
   margin: 0;
 }
@@ -54,10 +52,11 @@ div.movieCardGenre__div {
   flex-direction: row;
   justify-content: space-between;
   min-width: 100%;
+  margin-top: 5px;
 }
 
 .favorite-icon {
-  height: 50px;
+  height: 40px;
 }
 
 .movieCardTitle,
@@ -66,3 +65,12 @@ div.movieCardGenre__div {
   margin: 0;
 }
 
+.movieCardTitle {
+  margin-top: 10px;
+}
+
+.vote--avg--text{
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}

@@ -42,7 +42,7 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
               >
                 <Link to={`/movies/${id}`}>View Movie</Link>
               </button>            
-                <h3>{`${voteAverage * 10}%`}</h3>
+                <h3 className="vote--avg--text">{`${voteAverage * 10}%`}</h3>
               </div>}
               { !isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={(event) => addFavorite(event, currentUser.id, { id, title, poster_path: posterPath, release_date: releaseDate, vote_average: voteAverage, overview})}>
                 {favStatus.elem}
@@ -53,7 +53,7 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
               >
                 <Link to={`/movies/${id}`}>View Movie</Link>
               </button>
-                <h3>{`${voteAverage * 10}%`}</h3>
+                <h3 className="vote--avg--text">{`${voteAverage * 10}%`}</h3>
               </div>}        
             </footer>
           </div>
