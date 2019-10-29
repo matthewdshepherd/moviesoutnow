@@ -43,4 +43,11 @@ describe('postUserLogin', () => {
 
     expect(window.fetch).toHaveBeenCalledWith(url, mockOptions);
   });
+
+  it('should dispatch isLoading(false) if response is ok', async () => {
+    const thunk = postUserLogin(mockLoginCreds);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
+  })
 })
