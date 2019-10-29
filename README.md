@@ -1,68 +1,81 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Movie Tracker
+By:
+[Matthew Malone](https://github.com/matthewdshepherd)
+[Chris Basham](https://github.com/chrisdbasham317)
 
-## Available Scripts
+## Table of Contents
+* [Built With](#Built-With) 
+* [Screenshots](#Screenshots)
+* [Features](#Features)
+* [Try It Out](#Try-It-Out)
+* [Take It For A Spin](#Take-It-For-A-Spin)
+* [Why'd-We-Do-This?](Why'd-We-Do-This?)
+* [Link to Project Management Board](Link-to-Project-Management-Board)
 
-In the project directory, you can run:
 
-### `npm start`
+## Built With
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- HTML5
+- CSS3
+- JavaScript
+- React
+- Router
+- Redux
+- TDD (Jest, Enzyme)
+- OOP
+- Fetch API - themoviedb.org
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Screenshots
 
-### `npm test`
+Movie Tracker allows us to design and create the UI/UX.
+#### The Wireframe:
+<img src='./src/images/MovieTrackerWireFrame.png' alt="Movie Tracker Wire Frame">
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Here are screen shots and a gif of a short walkthrough of the app:
+<img src='./src/images/MovieTrackerWithNoCurrentuser.png' alt="Movie Tracker">
+<img src='./src/images/MovieTrackerWithCurrentUser.png' alt="Movie Tracker">
+<img src='./src/images/MovieTrackerMoviePage.png' alt="Movie Tracker">
+<img src='./src/images/MovieTrackerSignup.png' alt="Movie Tracker">
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] Built on React
+- [x] React Modals
+- [x] React Router
+- [x] Fetch
+- [x] Nested Fetch
+- [x] Loading Screens while fetch is in progress
+- [x] Paths making use of forward/back button
+- [X] Dynamic path setting 
+- [x] Favorited characters persist across web app and correctly appear when view other episodes
+- [x] Signing out redirects back to main page, clearing out all data and resetting state for new user
 
-### `npm run eject`
+## Try It Out
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [x] Browse the latest movies!
+- [X] Click view more on a movie you're iterested in to get more details
+- [X] Login to view your stored favorites!
+- [X] Don't have an account? No problem, click on the create account to get get started creating your own.
+- [X] Favorite some movies and come back later to check them out.
+- [x] Upon account creation, your name will appear at the top of the page.
+- [X] Valid email address and password more than 6 characters will enable login and/or signup button.
+- [X] Only one account per email address, if attemtped again a warnig will pop up letting you know.
+- [X] If password and/or email address do not match a warning will pop up letting you know. 
+- [x] Favorite Movies page shows all of the movies you've favorited while browsing.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Take It For A Spin
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+This site requres a few steps to get full functionality.
+To view the site and get more info about movies follow this site:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+View <a href=https://vrandall66.github.io/SWAPI-Trivia/>here</a> on GitHub.
 
-## Learn More
+## Why'd We Do This?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+We are students at Turing School of Software and Design, whom provioded the project specifications and website design. We are learning all the things on our way to becoming Software Engineers.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Link to Project Management Board
+[Link to Project Management Board](https://trello.com/b/SbtYTXpO/movie-time-board)
