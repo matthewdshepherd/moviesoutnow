@@ -29,23 +29,21 @@ const MoviePage = ({ movies, genres, currentMovie}) => {
                 className="moviePage--poster" />
                 <div className="movie__details">
                     <div className="movie--title--year">
-                        <div className="movie--year__div">
-                            <p className="movie--year">{release_date.split('-')[0]}</p>
-                        </div>
-                        <div className="movie--title__div">
-                            <h3 className="movie--title">{title}</h3>
-                        </div>
+                        <p className="movie--year">{release_date.split('-')[0]}</p>
+                        <h3 className="movie--title">{title}</h3>
                     </div>
                     <div className="movie--user--score--fav--votes">
                         <div className="movie--score__div">
-                         <p className="movie--score">User Score: {vote_average * 10}</p>
+                            <p className="movie--score--text">Score:</p>
+                            <p className="movie--score">{vote_average * 10}%</p>
                         </div>
                         <div className="movie--vote__div">
-                            <p className="movie--vote">Votes: {vote_count}</p>
+                            <p className="movie--vote--text">Votes:</p>
+                            <p className="movie--vote">{vote_count}</p>
                         </div>
                     </div>
                     <p className="movie--overview">{overview}</p>
-                    <div className="movie--genres">Genres: {getGenres}</div>
+                    <div className="movie--genres"><span className="genre-title">Genres:</span>  {getGenres}</div>
                 </div>
             </div>
         </div>
