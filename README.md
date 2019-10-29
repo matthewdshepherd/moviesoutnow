@@ -31,8 +31,8 @@ Movie Tracker allows us to design and create the UI/UX.
 #### The Wireframe:
 <img src='./src/images/MovieTrackerWireFrame.png' alt="Movie Tracker Wire Frame">
 
-Here are screen shots and a gif of a short walkthrough of the app:
-<img src='./src/images/MovieTrackerWithNoCurrentuser.png' alt="Movie Tracker">
+Here is screen shot walkthrough of the app:
+<img src='./src/images/MovieTrackerWithNoCurrentUser.png' alt="Movie Tracker">
 <img src='./src/images/MovieTrackerWithCurrentUser.png' alt="Movie Tracker">
 <img src='./src/images/MovieTrackerMoviePage.png' alt="Movie Tracker">
 <img src='./src/images/MovieTrackerSignup.png' alt="Movie Tracker">
@@ -70,7 +70,7 @@ Here are screen shots and a gif of a short walkthrough of the app:
 This site requres a few steps to get full functionality.
 To view the site and get more info about movies follow this site:
 
-View <a href=https://vrandall66.github.io/SWAPI-Trivia/>here</a> on GitHub.
+Coming soon!
 
 ## Why'd We Do This?
 
