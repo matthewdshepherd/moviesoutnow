@@ -99,4 +99,22 @@ describe('App', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
+
+  describe('mapStateToProps', () => {
+    it('should return and object with the redux state', () => {
+      const mockState = {
+        movies: [{ title: 'movie1' }, { title: 'movie2' }],
+        currentUser: {},
+        error: '',
+        genres: [{ name: 'genre1' }],
+        isLoading: false,
+        toggleModal: true
+      };
+      const expected = mockState
+
+      const mappedProps = mapStateToProps(mockState);
+
+      expect(mappedProps).toEqual(expected);
+    });
+  });
 });
