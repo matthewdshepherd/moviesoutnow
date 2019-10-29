@@ -23,7 +23,15 @@ describe('actions', () => {
   });
 
   it('should have a type of SET_RECENT_MOVIES', () => {
+    const movies = [{name: 'movie1'}, {name: 'movie2'}]
+    const expectedAction = {
+      type: 'SET_RECENT_MOVIES',
+      movies: movies
+    };
 
+    const result = actions.setRecentMovies(movies);
+
+    expect(result).toEqual(expectedAction);
   });
 
   it('should have a type of SET_GENRES', () => {
