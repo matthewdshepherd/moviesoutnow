@@ -64,4 +64,11 @@ describe('postNewUser', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(currentUser(mockUserResponse));
   });
+
+  it('should dispatch hasErrored if response is ok', async () => {
+    const thunk = postNewUser(mockLoginCreds);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(hasErrored(''));
+  });
 })
