@@ -33,11 +33,17 @@ const MoviePage = ({ movies, genres, currentMovie}) => {
                         <h3 className="movie--title">{title}</h3>
                     </div>
                     <div className="movie--user--score--fav--votes">
-                        <p className="movie--score">User Score: {vote_average * 10}</p>
-                        <p className="movie--vote">Votes: {vote_count}</p>
+                        <div className="movie--score__div">
+                            <p className="movie--score--text">Score:</p>
+                            <p className="movie--score">{vote_average * 10}%</p>
+                        </div>
+                        <div className="movie--vote__div">
+                            <p className="movie--vote--text">Votes:</p>
+                            <p className="movie--vote">{vote_count}</p>
+                        </div>
                     </div>
                     <p className="movie--overview">{overview}</p>
-                    <div className="movie--genres">Genres: {getGenres}</div>
+                    <div className="movie--genres"><span className="genre-title">Genres:</span>  {getGenres}</div>
                 </div>
             </div>
         </div>
