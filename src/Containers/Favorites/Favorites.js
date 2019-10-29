@@ -33,6 +33,6 @@ export const mapStateToProps = ({ favorites, genres, isLoading, movies }) => ({
   genres,
   isLoading,
   movies
-  })
+})
 
 export default connect(mapStateToProps)(Favorites)
