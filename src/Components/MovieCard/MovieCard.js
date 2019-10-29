@@ -32,32 +32,31 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
           <div className="movieCardGenre__div">
             <h2 className="movieCardGenre" style={genreStyle}>{genre.name}</h2>
             <h1 className="movieCardTitle">{title}</h1>
-            <footer className='footer--accents'>
-              { isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={(event) => removeFavorite(event, currentUser.id, id)}>
-                {favStatus.elem}
-                <button
-                type="button"
-                className="view--movies" 
-                onClick={(event) => clickHandler(event, id)}
-              >
-                <Link to={`/movies/${id}`}>View Movie</Link>
-              </button>            
-                <h3 className="vote--avg--text">{`${voteAverage * 10}%`}</h3>
-              </div>}
-              { !isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={(event) => addFavorite(event, currentUser.id, { id, title, poster_path: posterPath, release_date: releaseDate, vote_average: voteAverage, overview})}>
-                {favStatus.elem}
-                <button
-                type="button"
-                className="view--movies" 
-                onClick={(event) => clickHandler(event, id)}
-              >
-                <Link to={`/movies/${id}`}>View Movie</Link>
-              </button>
-                <h3 className="vote--avg--text">{`${voteAverage * 10}%`}</h3>
-              </div>}        
-            </footer>
           </div>
-
+          <footer className='footer--accents'>
+            { isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={(event) => removeFavorite(event, currentUser.id, id)}>
+              {favStatus.elem}
+              <button
+              type="button"
+              className="view--movies" 
+              onClick={(event) => clickHandler(event, id)}
+            >
+              <Link className="view--movies"  to={`/movies/${id}`}>View Movie</Link>
+            </button>            
+              <h3 className="vote--avg--text">{`${voteAverage * 10}%`}</h3>
+            </div>}
+            { !isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={(event) => addFavorite(event, currentUser.id, { id, title, poster_path: posterPath, release_date: releaseDate, vote_average: voteAverage, overview})}>
+              {favStatus.elem}
+              <button
+              type="button"
+              className="view--movies" 
+              onClick={(event) => clickHandler(event, id)}
+            >
+              <Link className="view--movies"  to={`/movies/${id}`}>View Movie</Link>
+            </button>
+              <h3 className="vote--avg--text">{`${voteAverage * 10}%`}</h3>
+            </div>}        
+          </footer>
         </div>
       </div>
     </div>

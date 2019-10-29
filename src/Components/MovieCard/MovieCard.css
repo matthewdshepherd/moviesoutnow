@@ -21,8 +21,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 20%;
-  width: 284px;
+  height: 25%;
+  width: 100%;
   bottom: 0%;
   position: absolute;
   background-color: rgba(140, 139, 139, .85);
@@ -30,20 +30,25 @@
 
 div.movieCardGenre__div {
     font-size: .7rem;
-    /* left: -2%; */
     padding: 1px 15px;
     position: relative;
     text-align: center;
-    top: -20%;
+    top: -15%;
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .footer--accents {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
   margin: 0;
+  position: absolute;
+  bottom: 0%;
+  padding: 0 15px;
 }
 
 .bottom-bar {
@@ -52,11 +57,10 @@ div.movieCardGenre__div {
   flex-direction: row;
   justify-content: space-between;
   min-width: 100%;
-  margin-top: 5px;
 }
 
 .favorite-icon {
-  height: 40px;
+  height: 35px;
 }
 
 .movieCardTitle,
@@ -73,4 +77,13 @@ div.movieCardGenre__div {
   font-size: 20px;
   font-weight: 700;
   margin: 0;
+}
+
+.view--movies {
+  border: none;
+  background: transparent;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
 }
