@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignupForm should match the snapshot 1`] = `
+<form
+  className="SignupForm"
+>
+  <div
+    className="signup-login"
+  >
+    <h3
+      className="signup-text"
+    >
+      SIGN UP
+    </h3>
+    <img
+      alt="Close Button"
+      className="signup_close_button"
+      onClick={[Function]}
+      src="close_btn.png"
+    />
+  </div>
+  <div
+    className="first--last--name__div"
+  >
+    <div
+      className="name__div--input"
+    >
+      <label
+        className="signup--label"
+        htmlFor="firstNameSU"
+      >
+        First Name
+      </label>
+      <input
+        className="signup--name--input"
+        id="signup--name--input fname"
+        name="firstName"
+        onChange={[Function]}
+        placeholder="First Name"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="name__div--input"
+    >
+      <label
+        className="signup--label"
+        htmlFor="lastNameSU"
+      >
+        Last Name
+      </label>
+      <input
+        className="signup--name--input"
+        id="signup--name--input lname"
+        name="lastName"
+        onChange={[Function]}
+        placeholder="Last Name"
+        type="text"
+        value=""
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="email--password--SU__div"
+    >
+      <label
+        className="email--password--SU__label"
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <input
+        className="email--password--SU__input"
+        id="email--SU"
+        name="email"
+        onChange={[Function]}
+        placeholder="Email"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="email--password--SU__div"
+    >
+      <label
+        className="email--password--SU__label"
+        htmlFor="password"
+      >
+        Passowrd
+      </label>
+      <input
+        className="email--password--SU__input"
+        id="password--SU"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+    </div>
+  </div>
+  <button
+    className="signup--submit__button"
+    disabled={true}
+    onClick={[Function]}
+    type="button"
+  >
+    SIGN UP
+  </button>
+  <div
+    className="error--message--spacing"
+  >
+    <div
+      className="signup__error--none"
+    >
+      <img
+        alt="Error Icon"
+        className="error__icon"
+        src="error_icon.png"
+      />
+      <p
+        className="signup__error__p"
+      >
+        Account with this email already exisits.
+      </p>
+    </div>
+  </div>
+</form>
+`;

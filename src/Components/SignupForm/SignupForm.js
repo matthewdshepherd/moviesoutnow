@@ -149,9 +149,9 @@ export class SignupForm extends React.Component {
 
 }
 
-const mapStateToProps = ({ toggleModal, error }) => ({ toggleModal, error })
+export const mapStateToProps = ({ toggleModal, error }) => ({ toggleModal, error })
 
-const mapDispatchToProps = (dispatch) => (
+export const mapDispatchToProps = (dispatch) => (
   bindActionCreators({ toggleModal, postNewUser, hasErrored}, dispatch)
 )
 
