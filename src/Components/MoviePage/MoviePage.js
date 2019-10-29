@@ -3,11 +3,11 @@ import './MoviePage.css'
 import { connect } from 'react-redux'
 
 
-const MoviePage = ({currentMovieID}) => {
+const MoviePage = ({ movies, genres, currentMovie}) => {
     
-    const { title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids, id } = this.props.movies.find( movie => movie.id === currentMovieID)
+    const { title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids, id } = movies.find( movie => movie.id === currentMovie)
    
-    const getGenres = this.props.genres.reduce( (acc, genre) => {
+    const getGenres = genres.reduce( (acc, genre) => {
         genre_ids.forEach( movieGenre => {
             if ( genre.id ===  movieGenre)
             acc.push(genre.name)
@@ -33,7 +33,7 @@ const MoviePage = ({currentMovieID}) => {
                         <p className="movie--year">{release_date.split('-')[0]}</p>
                     </div>
                     <div className="movie--user--score--fav--votes">
-                        <p className="movie--score">User Score: {vote_average.split('.').join('')}</p>
+                        <p className="movie--score">User Score: {vote_average * 10}</p>
                         <p className="movie--favorited">Fav</p>
                         <p className="movie--vote">Votes: {vote_count}</p>
                     </div>
@@ -45,6 +45,6 @@ const MoviePage = ({currentMovieID}) => {
     ) 
 }
 
-const mapStateToProps = ({ movies, genres }) => ({ movies, genres })
+const mapStateToProps = ({ movies, genres, currentMovie}) => ({ movies, genres, currentMovie })
 
 export default connect(mapStateToProps, null)(MoviePage)
