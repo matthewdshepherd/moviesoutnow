@@ -38,7 +38,7 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
               {favStatus.elem}
               <button
               type="button"
-              className="view--movies" 
+              className="view--movies button--border" 
               onClick={(event) => clickHandler(event, id)}
             >
               <Link className="view--movies"  to={`/movies/${id}`}>View Movie</Link>
@@ -49,7 +49,7 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
               {favStatus.elem}
               <button
               type="button"
-              className="view--movies" 
+              className="view--movies button--border" 
               onClick={(event) => clickHandler(event, id)}
             >
               <Link className="view--movies"  to={`/movies/${id}`}>View Movie</Link>
