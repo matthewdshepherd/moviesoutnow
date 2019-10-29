@@ -53,10 +53,22 @@ describe('postUserLogin', () => {
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
 
-  it('should dispatch fetchFavorites with correct id', async () => {
+  it('should dispatch fetchFavorites with correct id if response is ok', async () => {
     const thunk = postUserLogin(mockLoginCreds);
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(fetchFavorites(2));
+  });
+
+  it('should dispatch currentUser with correct args if response is ok', async () => {
+    const expected = {
+      id: 2,
+      name: 'Chris',
+      email: 'chris@me.com'
+    };
+    const thunk = postUserLogin(mockLoginCreds);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(currentUser(expected));
   })
 })
