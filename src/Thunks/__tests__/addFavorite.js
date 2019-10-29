@@ -24,6 +24,13 @@ describe('addFavorite', () => {
     mockDispatch = jest.fn();
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
       ok: true,
-    }))
+    }));
+  });
+
+  it('should call dispatch with isLoading(true)', () => {
+    const thunk = addFavorite(mockEvent, mockUserId, mockMovie);
+    thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
   })
 })
