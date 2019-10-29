@@ -16,5 +16,5 @@ describe('currentMovie reducer', () => {
     const expected = 4575557;
     const result = currentMovie(null, mockAction);
     expect(result).toEqual(expected);
-  })
+  });
 });
