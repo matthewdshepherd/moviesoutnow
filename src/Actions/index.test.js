@@ -47,7 +47,15 @@ describe('actions', () => {
   });
 
   it('should have a type of CURRENT_USER', () => {
+    const user = {name: 'Chris', id: 4}
+    const expectedAction = {
+      type: 'CURRENT_USER',
+      currentUser: user
+    };
 
+    const result = actions.currentUser(user);
+
+    expect(result).toEqual(expectedAction);
   });
 
   it('should have a type of TOGGLE_MODAL', () => {
