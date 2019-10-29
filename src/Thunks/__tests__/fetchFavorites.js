@@ -83,5 +83,16 @@ describe('fetchFavorites', () => {
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(setFavorites(mockFavorites));
-  })
+  });
+
+  it('should call hasErrored if response is not ok', async () => {
+    window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
+      ok: false,
+      statusText: 'Nope'
+    }));
+    const thunk = fetchFavorites(2);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(hasErrored('Nope'));
+  });
 })
