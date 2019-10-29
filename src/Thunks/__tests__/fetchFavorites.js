@@ -71,10 +71,17 @@ describe('fetchFavorites', () => {
     expect(window.fetch).toHaveBeenCalledWith(mockUrl);
   });
 
-  it('should call dispatch with isLoading(false)', async () => {
+  it('should call dispatch with isLoading(false) if response is ok', async () => {
     const thunk = fetchFavorites(2);
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
+
+  it('should call setFavorites with correct args is response is ok', async () => {
+    const thunk = fetchFavorites(2);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(setFavorites(mockFavorites));
+  })
 })
