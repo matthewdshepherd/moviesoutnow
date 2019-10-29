@@ -44,6 +44,7 @@ Here is screen shot walkthrough of the app:
 - [x] Built on React
 - [x] React Modals
 - [x] React Router
+- [x] Thunk MiddleWare
 - [x] Fetch
 - [x] Nested Fetch
 - [x] Loading Screens while fetch is in progress
