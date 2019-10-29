@@ -1,4 +1,4 @@
-import { isLoading, hasErrored, setFavorites } from '../Actions'
+import { isLoading, hasErrored } from '../Actions'
 import { fetchFavorites } from './fetchFavorites';
 
 export const removeFavorite = (id, movieId) => {
@@ -18,7 +18,6 @@ export const removeFavorite = (id, movieId) => {
       dispatch(isLoading(false));
       dispatch(fetchFavorites(id));
     } catch (error) {
-      console.error(error)
       dispatch(hasErrored(error.message))
     }
   }
