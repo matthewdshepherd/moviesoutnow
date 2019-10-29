@@ -2,6 +2,8 @@ import { postUserLogin } from '../postUserLogin';
 import { isLoading, hasErrored, currentUser } from '../../Actions';
 import { fetchFavorites } from '../fetchFavorites';
 
+jest.mock('../fetchFavorites');
+
 describe('postUserLogin', () => {
   let mockLoginCreds
   let mockDispatch
@@ -49,5 +51,12 @@ describe('postUserLogin', () => {
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
+  });
+
+  it('should dispatch fetchFavorites with correct id', async () => {
+    const thunk = postUserLogin(mockLoginCreds);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(fetchFavorites(2));
   })
 })
