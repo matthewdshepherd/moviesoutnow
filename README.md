@@ -21,6 +21,7 @@ By:
 - React
 - Router
 - Redux
+- Thunks
 - TDD (Jest, Enzyme)
 - OOP
 - Fetch API - themoviedb.org
@@ -50,20 +51,20 @@ Here is screen shot walkthrough of the app:
 - [x] Loading Screens while fetch is in progress
 - [x] Paths making use of forward/back button
 - [X] Dynamic path setting 
-- [x] Favorited characters persist across web app and correctly appear when view other episodes
+- [x] Favorited characters persist across web app and correctly appear when view other movies
 - [x] Signing out redirects back to main page, clearing out all data and resetting state for new user
 
 ## Try It Out
 
 - [x] Browse the latest movies!
-- [X] Click view more on a movie you're iterested in to get more details
+- [X] Click view more on a movie you're interested in to get more details.
 - [X] Login to view your stored favorites!
-- [X] Don't have an account? No problem, click on the create account to get get started creating your own.
+- [X] Don't have an account? No problem, click on the create account to get started.
 - [X] Favorite some movies and come back later to check them out.
 - [x] Upon account creation, your name will appear at the top of the page.
 - [X] Valid email address and password more than 6 characters will enable login and/or signup button.
-- [X] Only one account per email address, if attemtped again a warnig will pop up letting you know.
-- [X] If password and/or email address do not match a warning will pop up letting you know. 
+- [X] Only one account per email address, if attempted again a warning will pop up letting you know.
+- [X] If password and/or email address do not match, a warning will pop up letting you know. 
 - [x] Favorite Movies page shows all of the movies you've favorited while browsing.
 
 ## Take It For A Spin
@@ -75,7 +76,7 @@ Coming soon!
 
 ## Why'd We Do This?
 
-We are students at Turing School of Software and Design, whom provioded the project specifications and website design. We are learning all the things on our way to becoming Software Engineers.
+We are students at Turing School of Software and Design, whom provided the project specifications and website design guidelines. We are learning all the things on our way to becoming Software Engineers.
 
 
 ## Link to Project Management Board
