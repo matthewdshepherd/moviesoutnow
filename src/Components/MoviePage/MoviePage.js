@@ -3,7 +3,7 @@ import './MoviePage.css'
 import { connect } from 'react-redux'
 
 
-const MoviePage = ({ movies, genres, currentMovie}) => {
+export const MoviePage = ({ movies, genres, currentMovie}) => {
     const foundMovie = movies.find(movie => movie.id === currentMovie)
     const { title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids, id } = foundMovie
    
@@ -50,6 +50,6 @@ const MoviePage = ({ movies, genres, currentMovie}) => {
     ) 
 }
 
-const mapStateToProps = ({ movies, genres, currentMovie}) => ({ movies, genres, currentMovie })
+export const mapStateToProps = ({ movies, genres, currentMovie}) => ({ movies, genres, currentMovie })
 
 export default connect(mapStateToProps, null)(MoviePage)
