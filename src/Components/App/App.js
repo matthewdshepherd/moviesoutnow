@@ -27,13 +27,21 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <Link to='/'>
-            <img
-              src={movie_time_logo}
-              alt="Logo"
-              className="movie_time_logo"
-            />
-          </Link>
+          <div className="logo--homebtn__div">
+            <Link to='/'>
+              <img
+                src={movie_time_logo}
+                alt="Logo"
+                className="movie_time_logo"
+              />
+            </Link>
+            <Link to='/'>
+            <button
+              type="button"
+              className="go-home__button">Home
+            </button>
+            </Link>
+          </div>
           {!this.props.currentUser.name && <LoginForm />}
           {this.props.currentUser.name && <CurrentUser />}
         </header>
