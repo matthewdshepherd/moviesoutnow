@@ -14,8 +14,6 @@ const MoviePage = ({ movies, genres, currentMovie}) => {
         })
         return acc
     }, []).join(", ")
-  
-
     return (
         <div className="moviePage__div" key={id}>
             <img 
