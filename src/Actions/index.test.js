@@ -70,7 +70,13 @@ describe('actions', () => {
   });
 
   it('should have a type of SIGN_OUT', () => {
+    const expectedAction = {
+      type: 'SIGN_OUT',
+    };
 
+    const result = actions.signOut();
+
+    expect(result).toEqual(expectedAction);    
   });
 
   it('should have a type of SET_FAVORITES', () => {
