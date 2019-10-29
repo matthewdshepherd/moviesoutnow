@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { shallow } from 'enzyme';
-import { App } from './App';
+import { App, mapStateToProps, mapDispatchToProps } from './App';
+import { fetchGenres } from '../../Thunks/fetchGenres';
+import { fetchRecentMovies } from '../../Thunks/fetchRecentMovies';
+
+jest.mock('../../Thunks/fetchGenres');
+jest.mock('../../Thunks/fetchRecentMovies');
 
 describe('App', () => {
   let wrapper
@@ -73,5 +78,25 @@ describe('App', () => {
 
   it('should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('calls dispatch with fetchGenres when componentDidMount is called', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = fetchGenres();
+
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.fetchGenres();
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
+  });
+
+  it('calls dispatch with fetchRecentMovies when componentDidMount is called', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = fetchRecentMovies('https://api.themoviedb.org/3/movie/now_playing?api_key=02dd2ef67fc6cb12ff710ae75f51dda5&language=en-US&page=1');
+
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.fetchRecentMovies('https://api.themoviedb.org/3/movie/now_playing?api_key=02dd2ef67fc6cb12ff710ae75f51dda5&language=en-US&page=1');
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch);
   });
 });
