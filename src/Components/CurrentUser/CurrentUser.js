@@ -16,7 +16,6 @@ export class CurrentUser extends React.Component{
   }
 
   render() {
-    const userId = this.props.currentUser.id
     return (
       <div className={this.props.currentUser.id ? 'currentUser__div' : 'currentUser__hidden'}>
         <p className="currentUser__p--name">Welcome, {this.props.currentUser.name}!</p>
