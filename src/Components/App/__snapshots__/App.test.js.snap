@@ -85,5 +85,11 @@ exports[`App should match the snapshot 1`] = `
   >
     <Connect(Favorites) />
   </Route>
+  <Route
+    exact={true}
+    path="/movies/:id"
+  >
+    <Connect(MoviePage) />
+  </Route>
 </div>
 `;
