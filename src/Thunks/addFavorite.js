@@ -1,4 +1,4 @@
-import { isLoading, hasErrored, setFavorites } from '../Actions'
+import { isLoading, hasErrored } from '../Actions'
 import { fetchFavorites } from './fetchFavorites';
 
 

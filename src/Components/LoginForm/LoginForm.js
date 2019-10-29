@@ -1,6 +1,5 @@
 import React from "react"
 import "./LoginForm.css"
-import movie_time_logo from '../../images/movie_time.png'
 import { connect } from 'react-redux'
 import { postUserLogin } from '../../Thunks/postUserLogin'
 import { toggleModal } from '../../Actions'
