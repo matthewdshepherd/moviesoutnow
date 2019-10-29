@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MoviePage should match the snapshot 1`] = `
+<div
+  className="moviePage__div"
+  key="420809"
+>
+  <img
+    alt="Maleficent: Mistress of Evil Back Drop"
+    className="moviePage--backdrop"
+    src="https://image.tmdb.org/t/p/w500/skvI4rYFrKXS73BJxWGH54Omlvv.jpg"
+  />
+  <div
+    className="movie--poster--details__div"
+  >
+    <img
+      alt="Maleficent: Mistress of Evil Poster"
+      className="moviePage--poster"
+      src="https://image.tmdb.org/t/p/w500/tBuabjEqxzoUBHfbyNbd8ulgy5j.jpg"
+    />
+    <div
+      className="movie__details"
+    >
+      <div
+        className="movie--title--year"
+      >
+        <p
+          className="movie--year"
+        >
+          2019
+        </p>
+        <h3
+          className="movie--title"
+        >
+          Maleficent: Mistress of Evil
+        </h3>
+      </div>
+      <div
+        className="movie--user--score--fav--votes"
+      >
+        <div
+          className="movie--score__div"
+        >
+          <p
+            className="movie--score--text"
+          >
+            Score:
+          </p>
+          <p
+            className="movie--score"
+          >
+            72
+            %
+          </p>
+        </div>
+        <div
+          className="movie--vote__div"
+        >
+          <p
+            className="movie--vote--text"
+          >
+            Votes:
+          </p>
+          <p
+            className="movie--vote"
+          >
+            472
+          </p>
+        </div>
+      </div>
+      <p
+        className="movie--overview"
+      >
+        Maleficent and her goddaughter Aurora begin to question the complex family ties that bind them as they are pulled in different directions by impending nuptials, unexpected allies, and dark new forces at play.
+      </p>
+      <div
+        className="movie--genres"
+      >
+        <span
+          className="genre-title"
+        >
+          Genres:
+        </span>
+          
+        Action, Comedy, Horror
+      </div>
+    </div>
+  </div>
+</div>
+`;

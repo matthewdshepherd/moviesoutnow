@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MovieCard should match the snapshot 1`] = `
+<div
+  className="movieCard"
+  style={
+    Object {
+      "border": "3px solid undefined",
+    }
+  }
+>
+  <div
+    className="movie--content__div"
+  >
+    <img
+      alt="Movie art"
+      className="moviePoster"
+      src="https://image.tmdb.org/t/p/w500/path"
+    />
+    <div
+      className="moviePosterOverlay"
+    >
+      <div
+        className="movieCardGenre__div"
+      >
+        <h2
+          className="movieCardGenre"
+          style={
+            Object {
+              "background": "undefined",
+              "borderRadius": "18px",
+              "padding": "5px 15px",
+              "width": "11vw",
+            }
+          }
+        />
+        <h1
+          className="movieCardTitle"
+        >
+          Movie
+        </h1>
+      </div>
+      <footer
+        className="footer--accents"
+      >
+        <div
+          className="bottom-bar not-favorited"
+          onClick={[Function]}
+        >
+          <img
+            alt="is not favorite"
+            className="favorite-icon"
+            src="unfavorited__movie.png"
+          />
+          <button
+            className="view--movies button--border"
+            onClick={[Function]}
+            type="button"
+          >
+            <Link
+              className="view--movies"
+              to="/movies/4575557"
+            >
+              View Movie
+            </Link>
+          </button>
+          <h3
+            className="vote--avg--text"
+          >
+            200%
+          </h3>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+`;

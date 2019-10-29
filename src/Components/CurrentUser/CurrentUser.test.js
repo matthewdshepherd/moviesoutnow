@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { CurrentUser, mapStateToProps, mapDispatchToProps } from './CurrentUser';
 import { shallow } from 'enzyme';
 import { signOut, setFavorites } from '../../Actions';

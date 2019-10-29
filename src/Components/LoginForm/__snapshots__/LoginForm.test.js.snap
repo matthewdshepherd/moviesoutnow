@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm should match the snapshot 1`] = `
+<div
+  className="errorHolder__div"
+>
+  <form
+    className="header--login__hidden"
+  >
+    <div
+      className="header--userinput__div"
+    >
+      <label
+        className="login__label"
+        htmlFor="email"
+      >
+        Email
+      </label>
+      <input
+        className="header--userinput__input"
+        id="email"
+        name="email"
+        onChange={[Function]}
+        placeholder="Email"
+        type="text"
+        value=""
+      />
+      <p
+        className="login--bottomtext new--account__btn"
+        onClick={[Function]}
+      >
+        Create new account
+      </p>
+    </div>
+    <div
+      className="header--userinput__div"
+    >
+      <label
+        className="login__label"
+        htmlFor="password"
+      >
+        Password
+      </label>
+      <input
+        className="header--userinput__input"
+        id="password"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+      <p
+        className="login--bottomtext"
+      >
+        Forgot account?
+      </p>
+    </div>
+    <button
+      className="login__button"
+      disabled={true}
+      onClick={[Function]}
+      type="button"
+    >
+      Login
+    </button>
+  </form>
+  <div
+    className="error--text__div__hidden"
+  >
+    <img
+      alt="Error Icon"
+      className="error__icon"
+      src="error_icon.png"
+    />
+    <p
+      className="error--text"
+    >
+      The email and/or passowrd you've entered is incorrect.
+    </p>
+  </div>
+</div>
+`;
