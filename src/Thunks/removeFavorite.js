@@ -1,7 +1,8 @@
 import { isLoading, hasErrored } from '../Actions'
 import { fetchFavorites } from './fetchFavorites';
 
-export const removeFavorite = (id, movieId) => {
+export const removeFavorite = (event, id, movieId) => {
+  event.stopPropagation();
   const options = {
     method: 'DELETE',
     headers: {

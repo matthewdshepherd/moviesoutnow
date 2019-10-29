@@ -7,9 +7,10 @@ import isNotFavorited from '../../images/unfavorited__movie.png';
 import { bindActionCreators } from 'redux';
 import { removeFavorite } from '../../Thunks/removeFavorite';
 import { addFavorite } from '../../Thunks/addFavorite';
+import { clickHandler } from '../../Thunks/clickHandler'
 import { setCurrentMovie } from '../../Actions'
 
-const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genre, isFavorite, id, currentUser, removeFavorite, addFavorite, setCurrentMovie}) => {
+const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genre, isFavorite, id, currentUser, removeFavorite, addFavorite, clickHandler, setCurrentMovie}) => {
   var borderStyle = {
     border: `3px solid ${genre.borderColor}`
   }
@@ -34,6 +35,13 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
         <footer className='footer--accents'>
           { isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={(event) => removeFavorite(event, currentUser.id, id)}>
             {favStatus.elem}
+            <button
+            type="button"
+            className="view--movies" 
+            onClick={(event) => clickHandler(event, id)}
+          >
+            <Link to={`/movies/${id}`}>View Movie</Link>
+          </button>            
             <h3>{`${voteAverage * 10}%`}</h3>
           </div>}
           { !isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={(event) => addFavorite(event, currentUser.id, { id, title, poster_path: posterPath, release_date: releaseDate, vote_average: voteAverage, overview})}>
@@ -41,8 +49,7 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
             <button
             type="button"
             className="view--movies" 
-            onClick={() => setCurrentMovie(id)}
-            // onClick={<MoviePage id={id} />}
+            onClick={(event) => clickHandler(event, id)}
           >
             <Link to={`/movies/${id}`}>View Movie</Link>
           </button>
@@ -59,7 +66,7 @@ const mapStateToProps = ({ currentUser }) => ({
 })
 
 const mapDispatchToProps = (dispatch) => (
-  bindActionCreators({removeFavorite, addFavorite, setCurrentMovie}, dispatch)
+  bindActionCreators({removeFavorite, addFavorite, setCurrentMovie, clickHandler}, dispatch)
 )
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieCard)
