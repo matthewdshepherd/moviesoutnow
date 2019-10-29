@@ -61,5 +61,13 @@ describe('fetchFavorites', () => {
     thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
+  });
+
+  it('should call fetch with correct URL', () => {
+    const mockUrl = 'http://localhost:3001/api/v1/users/2/moviefavorites';
+    const thunk = fetchFavorites(2);
+    thunk(mockDispatch);
+
+    expect(window.fetch).toHaveBeenCalledWith(mockUrl);
   })
 })
