@@ -23,7 +23,6 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
   }
 
   const favStatus = isFavorite ? { classVal: 'favorited', elem: <img className='favorite-icon' src={favorited_movie} alt='is favorite'/> } : { classVal: 'not-favorited', elem: <img className='favorite-icon' src={isNotFavorited} alt='is not favorite'/> }
-  {console.log('id', id)}
   return (
     <div className="movieCard" style={borderStyle}>
       <div className="movie--content__div">
