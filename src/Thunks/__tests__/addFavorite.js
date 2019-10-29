@@ -32,5 +32,19 @@ describe('addFavorite', () => {
     thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
-  })
+  });
+
+  it('should call fetch with correct url and options', () => {
+    const mockOptions = {
+      method: 'POST',
+      body: '{"movie_id":2,"title":"Good Movie","poster_path":"/someimage","release_date":"yesterday","vote_average":33,"overview":"Here is a synopsis"}',
+      headers: { 'Content-Type': 'application/json' }
+    }
+    const mockUrl = 'http://localhost:3001/api/v1/users/3/moviefavorites'
+    const thunk = addFavorite(mockEvent, mockUserId, mockMovie);
+    thunk(mockDispatch);
+
+    expect(window.fetch).toHaveBeenCalledWith(mockUrl, mockOptions);
+  });
+
 })
