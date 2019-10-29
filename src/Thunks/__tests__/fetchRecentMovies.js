@@ -1,8 +1,6 @@
 import { fetchRecentMovies } from '../fetchRecentMovies';
 import { isLoading, hasErrored, setRecentMovies } from '../../Actions';
 
-// jest.mock('../../Actions');
-
 describe('fetchRecentMovies', () => {
   let mockUrl
   let mockMovies
