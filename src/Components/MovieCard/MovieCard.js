@@ -23,6 +23,7 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
   }
 
   const favStatus = isFavorite ? { classVal: 'favorited', elem: <img className='favorite-icon' src={favorited_movie} alt='is favorite'/> } : { classVal: 'not-favorited', elem: <img className='favorite-icon' src={isNotFavorited} alt='is not favorite'/> }
+  {console.log('id', id)}
   return (
     <div className="movieCard" style={borderStyle}>
       <div className="movie--content__div">
@@ -35,24 +36,12 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
           <footer className='footer--accents'>
             { isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={(event) => removeFavorite(event, currentUser.id, id)}>
               {favStatus.elem}
-              <button
-              type="button"
-              className="view--movies button--border" 
-              onClick={(event) => clickHandler(event, id)}
-            >
-              <Link className="view--movies"  to={`/movies/${id}`}>View Movie</Link>
-            </button>            
+              <Link className="view--movies button--border" onClick={(event) => clickHandler(event, id)} to={`/movies/${id}`}>View Movie</Link>
               <h3 className="vote--avg--text">{`${voteAverage * 10}%`}</h3>
             </div>}
             { !isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={(event) => addFavorite(event, currentUser.id, { id, title, poster_path: posterPath, release_date: releaseDate, vote_average: voteAverage, overview})}>
               {favStatus.elem}
-              <button
-              type="button"
-              className="view--movies button--border" 
-              onClick={(event) => clickHandler(event, id)}
-            >
-              <Link className="view--movies"  to={`/movies/${id}`}>View Movie</Link>
-            </button>
+              <Link className="view--movies button--border" onClick={(event) => clickHandler(event, id)} to={`/movies/${id}`}>View Movie</Link>
               <h3 className="vote--avg--text">{`${voteAverage * 10}%`}</h3>
             </div>}        
           </footer>
