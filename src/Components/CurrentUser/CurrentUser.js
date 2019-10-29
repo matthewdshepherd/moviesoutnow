@@ -36,7 +36,7 @@ export class CurrentUser extends React.Component{
   }
 }
 
-const mapStateToProps = ({ currentUser, favorites }) => ({
+const mapStateToProps = ({ currentUser }) => ({
   currentUser,
 })
 

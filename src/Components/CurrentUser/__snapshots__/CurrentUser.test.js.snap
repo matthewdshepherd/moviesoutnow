@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentUser should match the snapshot with all data passed in correctly 1`] = `
+<div
+  className="currentUser__div"
+>
+  <p
+    className="currentUser__p--name"
+  >
+    Welcome, 
+    Chris
+    !
+  </p>
+  <Link
+    to="/favorites"
+  >
+    <button
+      className="view--favorite--movies__button"
+      type="button"
+    >
+      Favorite Movies
+    </button>
+  </Link>
+  <button
+    className="sign--out__button"
+    onClick={[Function]}
+    type="button"
+  >
+    <Link
+      className="sign--out__button"
+      to="/"
+    >
+      Sign Out
+    </Link>
+  </button>
+</div>
+`;
