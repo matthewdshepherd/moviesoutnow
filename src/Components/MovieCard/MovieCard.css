@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   height: -webkit-fill-available;
-  width: 29vw;
   margin: 20px 10px;
+  max-width: 330px;
   border: 3px solid red;
   padding: 10px;
-
+  width: 29vw;
 }
 
 .moviePoster {
@@ -16,7 +16,7 @@
 }
 
 .moviePosterOverlay {
-  bottom: 14.45vh;
+  bottom: 13.6vh;
   display: flex;
   flex-direction: column;
   align-items: center;
