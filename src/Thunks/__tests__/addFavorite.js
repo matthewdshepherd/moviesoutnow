@@ -2,6 +2,8 @@ import { addFavorite } from '../addFavorite';
 import { fetchFavorites } from '../fetchFavorites';
 import { isLoading, hasErrored, setFavorites } from '../../Actions';
 
+jest.mock('../fetchFavorites');
+
 describe('addFavorite', () => {
   let mockDispatch
   let mockEvent
@@ -54,4 +56,10 @@ describe('addFavorite', () => {
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   })
 
+  it('should dispatch fetchFavorites with correct args', async () => {
+    const thunk = addFavorite(mockEvent, mockUserId, mockMovie);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(fetchFavorites(mockUserId));
+  });
 })
