@@ -13,7 +13,11 @@ import SignupForm from '../SignupForm/SignupForm';
 import ReactModal from "react-modal";
 import CurrentUser from '../CurrentUser/CurrentUser';
 import Favorites from '../../Containers/Favorites/Favorites';
+<<<<<<< Updated upstream
 import MoviePage from '../../Components/MoviePage/MoviePage';
+=======
+import MoviePage from '../../Components/MoviePage/MoviePage'
+>>>>>>> Stashed changes
 
 
 class App extends Component {
@@ -70,6 +74,9 @@ class App extends Component {
         </Route>
         <Route exact path='/favorites'>
           <Favorites />
+        </Route>
+        <Route exact path="/movies/:id">
+          <MoviePage />
         </Route>
     </div>
     )
