@@ -1,6 +1,6 @@
 import { addFavorite } from '../addFavorite';
 import { fetchFavorites } from '../fetchFavorites';
-import { isLoading, hasErrored, setFavorites } from '../../Actions';
+import { isLoading, hasErrored } from '../../Actions';
 
 jest.mock('../fetchFavorites');
 
