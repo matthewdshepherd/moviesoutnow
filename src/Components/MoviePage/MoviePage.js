@@ -3,9 +3,9 @@ import './MoviePage.css'
 import { connect } from 'react-redux'
 
 
-const MoviePage = (currentMovieID) => {
+const MoviePage = ({currentMovieID}) => {
     
-    const { title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids } = this.props.movies.find( movie => movie.id === currentMovieID)
+    const { title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids, id } = this.props.movies.find( movie => movie.id === currentMovieID)
    
     const getGenres = this.props.genres.reduce( (acc, genre) => {
         genre_ids.forEach( movieGenre => {

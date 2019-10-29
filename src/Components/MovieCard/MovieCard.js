@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from "react-router-dom";
 import './MovieCard.css';
 import favorited_movie from '../../images/favorited__movie.png';
 import isNotFavorited from '../../images/unfavorited__movie.png';
 import { bindActionCreators } from 'redux';
 import { removeFavorite } from '../../Thunks/removeFavorite';
 import { addFavorite } from '../../Thunks/addFavorite';
+import MoviePage from '../MoviePage/MoviePage'
 
 const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genre, isFavorite, id, currentUser, removeFavorite, addFavorite }) => {
   var borderStyle = {
@@ -25,7 +27,16 @@ const MovieCard = ({ title, posterPath, releaseDate, voteAverage, overview, genr
       <div className="moviePosterOverlay">
         <div className="movieCardGenre">
           <h2 className="movieCardGenre" style={genreStyle}>{genre.name}</h2>
-        <h1 className="movieCardTitle">     {title}</h1>
+          <h1 className="movieCardTitle">{title}</h1>
+          <Link to={`/movies/${id}`}>
+          <button
+            type="button"
+            className="view--movies"
+            onClick={<MoviePage currentMovieID={id}/>}
+          >
+            View Movie
+          </button>
+        </Link>
         </div>
         <footer className='footer--accents'>
           { isFavorite && <div className={`bottom-bar ${favStatus.classVal}`} onClick={() => removeFavorite(currentUser.id, id)}>
