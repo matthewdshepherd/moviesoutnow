@@ -42,3 +42,18 @@ body {
 .cinema_night_artwork {
   height: 500px;
 }
+
+.logo--homebtn__div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.go-home__button {
+  color: #FFF;
+  font-size: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #FDC938;
+}

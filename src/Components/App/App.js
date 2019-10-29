@@ -20,7 +20,7 @@ import MoviePage from '../../Components/MoviePage/MoviePage'
 >>>>>>> Stashed changes
 
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount() {
     this.props.fetchGenres()
@@ -31,13 +31,21 @@ class App extends Component {
     return (
       <div className="App">
         <header className="header">
-          <Link to='/'>
-            <img
-              src={movie_time_logo}
-              alt="Logo"
-              className="movie_time_logo"
-            />
-          </Link>
+          <div className="logo--homebtn__div">
+            <Link to='/'>
+              <img
+                src={movie_time_logo}
+                alt="Logo"
+                className="movie_time_logo"
+              />
+            </Link>
+            <Link to='/'>
+            <button
+              type="button"
+              className="go-home__button">Home
+            </button>
+            </Link>
+          </div>
           {!this.props.currentUser.name && <LoginForm />}
           {this.props.currentUser.name && <CurrentUser />}
         </header>
@@ -83,7 +91,7 @@ class App extends Component {
   }
 }
 
-  const mapStateToProps = ({ movies, genres, isLoading, error, toggleModal, currentUser }) => ({
+export const mapStateToProps = ({ movies, genres, isLoading, error, toggleModal, currentUser }) => ({
     movies,
     genres,
     isLoading,
@@ -92,7 +100,7 @@ class App extends Component {
     currentUser
   })
 
-const mapDispatchToProps = (dispatch) => (
+export const mapDispatchToProps = (dispatch) => (
   bindActionCreators({ fetchRecentMovies, fetchGenres }, dispatch)
 )
 

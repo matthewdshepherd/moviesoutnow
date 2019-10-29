@@ -19,12 +19,6 @@ export class CurrentUser extends React.Component{
     return (
       <div className={this.props.currentUser.id ? 'currentUser__div' : 'currentUser__hidden'}>
         <p className="currentUser__p--name">Welcome, {this.props.currentUser.name}!</p>
-        <Link to='/'>
-          <button
-            type="button"
-            className="go-home__button">Home
-          </button>
-        </Link>
         <Link to='/favorites'>
           <button
             type="button"
