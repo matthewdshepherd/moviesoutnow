@@ -16,7 +16,7 @@ import Favorites from '../../Containers/Favorites/Favorites';
 import MoviePage from '../../Components/MoviePage/MoviePage';
 
 
-class App extends Component {
+export class App extends Component {
 
   componentDidMount() {
     this.props.fetchGenres()
@@ -76,7 +76,7 @@ class App extends Component {
   }
 }
 
-  const mapStateToProps = ({ movies, genres, isLoading, error, toggleModal, currentUser }) => ({
+export const mapStateToProps = ({ movies, genres, isLoading, error, toggleModal, currentUser }) => ({
     movies,
     genres,
     isLoading,
@@ -85,7 +85,7 @@ class App extends Component {
     currentUser
   })
 
-const mapDispatchToProps = (dispatch) => (
+export const mapDispatchToProps = (dispatch) => (
   bindActionCreators({ fetchRecentMovies, fetchGenres }, dispatch)
 )
 
