@@ -13,7 +13,7 @@ const MoviePage = ({ movies, genres, currentMovie}) => {
             acc.push(genre.name)
         })
         return acc
-    }, [])
+    }, []).join(", ")
   
 
     return (
@@ -29,16 +29,15 @@ const MoviePage = ({ movies, genres, currentMovie}) => {
                 className="moviePage--poster" />
                 <div className="movie__details">
                     <div className="movie--title--year">
-                        <h3 className="movie--title">{title}</h3>
                         <p className="movie--year">{release_date.split('-')[0]}</p>
+                        <h3 className="movie--title">{title}</h3>
                     </div>
                     <div className="movie--user--score--fav--votes">
                         <p className="movie--score">User Score: {vote_average * 10}</p>
-                        <p className="movie--favorited">Fav</p>
                         <p className="movie--vote">Votes: {vote_count}</p>
                     </div>
                     <p className="movie--overview">{overview}</p>
-                    <div className="movie--genres">{getGenres}</div>
+                    <div className="movie--genres">Genres: {getGenres}</div>
                 </div>
             </div>
         </div>
