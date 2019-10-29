@@ -18,7 +18,6 @@ export const removeFavorite = (id, movieId) => {
       dispatch(isLoading(false));
       dispatch(fetchFavorites(id));
     } catch (error) {
-      console.error(error)
       dispatch(hasErrored(error.message))
     }
   }
