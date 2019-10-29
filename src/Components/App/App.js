@@ -61,7 +61,7 @@ class App extends Component {
           />
           <SignupForm />
         </ReactModal>
-        <Route exact path='/'>
+        <Route exact path='/movies/:id'>
           <Movies />
         </Route>
         <Route exact path='/favorites'>

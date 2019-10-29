@@ -1,7 +1,14 @@
 import React from 'react';
 import './MoviePage.css'
+import { connect } from 'react-redux'
 
-const MoviePage = ({ title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids, isFavorite, id }) => {
+
+const MoviePage = (id) => {
+
+
+
+
+    const { title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids } = variable
     getGenres = () => {
         reutrn "genre"
     }
@@ -35,4 +42,6 @@ const MoviePage = ({ title, poster_path, backdrop_path, release_date, vote_avera
     ) 
 }
 
-export default MoviePage
+const mapStateToProps = ({ movies }) => ({ movies })
+
+export default connect(mapStateToProps, null)(MoviePage)
