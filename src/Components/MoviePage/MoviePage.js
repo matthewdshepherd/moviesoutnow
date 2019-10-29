@@ -3,15 +3,18 @@ import './MoviePage.css'
 import { connect } from 'react-redux'
 
 
-const MoviePage = (id) => {
-
-
-
-
-    const { title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids } = variable
-    getGenres = () => {
-        reutrn "genre"
-    }
+const MoviePage = (currentMovieID) => {
+    
+    const { title, poster_path, backdrop_path, release_date, vote_average, vote_count, overview, genre_ids } = this.props.movies.find( movie => movie.id === currentMovieID)
+   
+    const getGenres = this.props.genres.reduce( (acc, genre) => {
+        genre_ids.forEach( movieGenre => {
+            if ( genre.id ===  movieGenre)
+            acc.push(genre.name)
+        })
+        return acc
+    }, [])
+  
 
     return (
         <div className="moviePage__div" key={id}>
@@ -42,6 +45,6 @@ const MoviePage = (id) => {
     ) 
 }
 
-const mapStateToProps = ({ movies }) => ({ movies })
+const mapStateToProps = ({ movies, genres }) => ({ movies, genres })
 
 export default connect(mapStateToProps, null)(MoviePage)
