@@ -69,5 +69,12 @@ describe('fetchFavorites', () => {
     thunk(mockDispatch);
 
     expect(window.fetch).toHaveBeenCalledWith(mockUrl);
-  })
+  });
+
+  it('should call dispatch with isLoading(false)', async () => {
+    const thunk = fetchFavorites(2);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
+  });
 })
