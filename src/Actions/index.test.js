@@ -10,4 +10,36 @@ describe('actions', () => {
 
     expect(result).toEqual(expectedAction);
   });
+
+  it('should have a type of HAS_ERRORED', () => {
+
+  });
+
+  it('should have a type of SET_RECENT_MOVIES', () => {
+
+  });
+
+  it('should have a type of SET_GENRES', () => {
+
+  });
+
+  it('should have a type of CURRENT_USER', () => {
+
+  });
+
+  it('should have a type of TOGGLE_MODAL', () => {
+
+  });
+
+  it('should have a type of SIGN_OUT', () => {
+
+  });
+
+  it('should have a type of SET_FAVORITES', () => {
+
+  });
+
+  it('should have a type of SET_CURRENT_MOVIE', () => {
+
+  });
 });
