@@ -8,4 +8,17 @@ describe('currentUser reducer', () => {
     expect(result).toEqual(expected);
   });
 
+it('should return a movie id', () => {
+  const mockAction = {
+    type: 'CURRENT_USER',
+    currentUser: {
+      id: 4,
+      name: 'Chris',
+      email: 'chris@me.com'
+    }
+  }
+  const expected = mockAction.currentUser;
+  const result = currentUser(null, mockAction);
+  expect(result).toEqual(expected);
+});
 });
