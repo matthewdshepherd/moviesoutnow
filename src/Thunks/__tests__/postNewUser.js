@@ -50,5 +50,11 @@ describe('postNewUser', () => {
 
     expect(window.fetch).toHaveBeenCalledWith(mockUrl, mockOptions);
   });
-  
+
+  it('should dispatch with isLoading(false) if response is ok', async () => {
+    const thunk = postNewUser(mockLoginCreds);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
+  });
 })
