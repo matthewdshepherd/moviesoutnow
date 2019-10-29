@@ -24,4 +24,18 @@ describe('addFavorite', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(true));
   });
+
+  it('should call fetch with the correct url and options', () => {
+    const mockUrl = 'http://localhost:3001/api/v1/users/3/moviefavorites/4575557';
+    const mockOptions = {
+      method: 'DELETE',
+      headers: {
+        "Content-Type": 'application/json'
+      }
+    };
+    const thunk = removeFavorite(mockUserId, mockMovieId);
+    thunk(mockDispatch);
+
+    expect(window.fetch).toHaveBeenCalledWith(mockUrl, mockOptions);
+  });
 });
