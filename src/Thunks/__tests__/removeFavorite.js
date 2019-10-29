@@ -45,4 +45,11 @@ describe('addFavorite', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
+
+  it('should dispatch fetchFavorites with correct args', async () => {
+    const thunk = removeFavorite(mockUserId, mockMovieId);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(fetchFavorites(mockUserId));
+  });
 });
