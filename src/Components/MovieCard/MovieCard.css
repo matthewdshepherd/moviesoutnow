@@ -15,6 +15,10 @@
   height: 69vh;
 }
 
+.view--movies {
+  z-index: 2000;
+}
+
 .moviePosterOverlay {
   bottom: 13.6vh;
   display: flex;

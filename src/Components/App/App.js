@@ -13,6 +13,7 @@ import SignupForm from '../SignupForm/SignupForm';
 import ReactModal from "react-modal";
 import CurrentUser from '../CurrentUser/CurrentUser';
 import Favorites from '../../Containers/Favorites/Favorites';
+import MoviePage from '../../Components/MoviePage/MoviePage';
 
 
 class App extends Component {
@@ -63,6 +64,9 @@ class App extends Component {
         </ReactModal>
         <Route exact path='/'>
           <Movies />
+        </Route>
+        <Route path='/movies/:id'>
+          <MoviePage />
         </Route>
         <Route exact path='/favorites'>
           <Favorites />
