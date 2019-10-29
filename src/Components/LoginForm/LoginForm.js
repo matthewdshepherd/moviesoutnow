@@ -94,7 +94,7 @@ export class LoginForm extends React.Component {
             alt="Error Icon"
             className="error__icon" />
           <p className= "error--text"
-          >The email and/or passowrd you've entered is incorrect.</p>
+          >The email and/or password you've entered is incorrect.</p>
         </div>
       </div>
     )
