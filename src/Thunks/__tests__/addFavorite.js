@@ -54,7 +54,7 @@ describe('addFavorite', () => {
     await thunk(mockDispatch);
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
-  })
+  });
 
   it('should dispatch fetchFavorites with correct args', async () => {
     const thunk = addFavorite(mockEvent, mockUserId, mockMovie);

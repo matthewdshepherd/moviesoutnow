@@ -38,4 +38,11 @@ describe('addFavorite', () => {
 
     expect(window.fetch).toHaveBeenCalledWith(mockUrl, mockOptions);
   });
+
+  it('should dispatch with isLoading(false) if response is ok', async () => {
+    const thunk = removeFavorite(mockUserId, mockMovieId);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
+  });
 });
