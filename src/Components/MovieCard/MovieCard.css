@@ -1,54 +1,54 @@
 .movieCard {
   display: flex;
   flex-direction: column;
-  height: -webkit-fill-available;
+  justify-content: flex-end;
+  width: 310px;
   margin: 20px 10px;
-  max-width: 330px;
   border: 3px solid red;
   padding: 10px;
-  width: 29vw;
 }
 
-.moviePoster {
+.movie--content__div {
   position: relative;
-  width: 100%;
-  height: 69vh;
-}
 
-.view--movies {
-  z-index: 2000;
+}
+.moviePoster {
+  width: 100%;
+  height: auto;
 }
 
 .moviePosterOverlay {
-  bottom: 13.6vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 95px;
+  height: 25%;
   width: 100%;
-  position: relative;
+  bottom: 0%;
+  position: absolute;
   background-color: rgba(140, 139, 139, .85);
 }
 
-.movieCardTitle,
-.movieCardGenre {
-  color: black;
-}
-
-div.movieCardGenre {
+div.movieCardGenre__div {
     font-size: .7rem;
-    left: -2%;
     padding: 1px 15px;
     position: relative;
     text-align: center;
-    top: -30px;
-    min-width: 100%;
+    top: -15%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer--accents {
-  bottom: -2vh;
-  position: absolute;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
+  margin: 0;
+  position: absolute;
+  bottom: 0%;
+  padding: 0 15px;
 }
 
 .bottom-bar {
@@ -60,6 +60,47 @@ div.movieCardGenre {
 }
 
 .favorite-icon {
-  height: 5vh;
-  width: 5vh;
+  height: 35px;
+}
+
+.favorite-icon:hover {
+  transform: scale(1.2) rotateZ(-5deg);
+  transition: all 1s ease-in-out 0s;
+  cursor: pointer;
+}
+
+.movieCardTitle,
+.movieCardGenre {
+  color: black;
+  margin: 0;
+}
+
+.movieCardTitle {
+  margin-top: 10px;
+}
+
+.vote--avg--text{
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.view--movies {
+  border-radius: 5px;
+  background: transparent;
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFF;
+}
+
+.button--border {
+  border: 1px solid black;
+  background-color: black;
+}
+
+.view--movies:hover {
+  transform: scale(1.1) ;
+  transition: all 1s ease-in-out 0s;
 }
