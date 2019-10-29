@@ -57,4 +57,11 @@ describe('postNewUser', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(isLoading(false));
   });
+
+  it('should dispatch currentUser with correct args if response is ok', async () => {
+    const thunk = postNewUser(mockLoginCreds);
+    await thunk(mockDispatch);
+
+    expect(mockDispatch).toHaveBeenCalledWith(currentUser(mockUserResponse));
+  });
 })
