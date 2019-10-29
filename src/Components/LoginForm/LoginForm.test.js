@@ -10,7 +10,6 @@ describe("LoginForm", () => {
     wrapper = shallow(
       <LoginForm
         currentUser={{ id: 3, name: 'Chris' }}
-        
       />)
   })
 
