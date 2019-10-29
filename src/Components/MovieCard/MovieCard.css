@@ -8,8 +8,11 @@
   padding: 10px;
 }
 
-.moviePoster {
+.movie--content__div {
   position: relative;
+
+}
+.moviePoster {
   width: 100%;
   height: auto;
 }
@@ -22,8 +25,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 13%;
+  height: 20%;
   width: 284px;
+  bottom: 0%;
   position: absolute;
   background-color: rgba(140, 139, 139, .85);
 }
